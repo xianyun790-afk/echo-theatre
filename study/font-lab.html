@@ -1,0 +1,24 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第一幕标题字体实字比较</title><style>
+@font-face {
+  font-family: 'Long Cang';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=LYjAdGP8kkgoTec8zkRgrWhdt19dvCwxE44GW-AuuxGo4hdvFC6JnLS0iU8gmREBFVliUlCZn_-uO1AI3_nY9ADVJWBeuAbof2C1xosS_fs0D-h2x9fmpn_FZ-77J944RYqUb3GrYrHobPmozIqWr_8IKSkHcXTCNk88IelYh-eKOp7H&skey=429db178d90bd0ed&v=v21) format('truetype');
+}
+@font-face {
+  font-family: 'Ma Shan Zheng';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/l/font?kit=NaPecZTRCLxvwo41b4gvzkXaRMT0em_T5FghMoaGTxw2FZsmCarF9YEKhBKGBxbwWNiaoH7ByMSI2vbeW1t6kWv5IWXsg0A6NdQ_Fv_1M1xFJG1Yf3EG3q3xaBVpZCqCqpQZ0yt00Z5xOLUr3j-7T_aAmbCx_guz-fel3GgYUbSh7Wo7oHkJ0w&skey=13c999d73b164fc8&v=v18) format('truetype');
+}
+@font-face {font-family:'Noto Serif SC';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/archive-print.woff2') format('woff2');}
+@font-face {font-family:'Noto Serif SC';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/archive-reading.woff2') format('woff2');}
+
+*{box-sizing:border-box}body{margin:0;background:#0b191e;color:#e8ddbd;font:14px -apple-system,sans-serif;padding:36px}.intro{font-size:12px;letter-spacing:2px;color:#adad92;margin-bottom:28px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.sample{--face:'Ma Shan Zheng';min-width:0}.label{font:11px Georgia,serif;letter-spacing:2px;color:#b6a77b;margin-bottom:22px}.dark{padding:25px 22px 30px;min-height:268px;background:radial-gradient(ellipse at 70% 0%,#414a36,#0c1b20 80%);border:1px solid #aca58428}.brand{font-family:var(--face),serif;font-size:27px;letter-spacing:2px}.hero{font-family:var(--face),serif;font-weight:400;font-size:46px;line-height:1.5;letter-spacing:4px;margin:24px 0 0}.paper{margin-top:22px;padding:28px 22px;background:#ded6c2;color:#303a34;min-height:330px}.paper h2{font-family:var(--face),serif;font-weight:600;font-size:28px;letter-spacing:2px;margin:12px 0 28px}.kicker{font:9px Georgia,serif;letter-spacing:2px;color:#77765e}.small{font-family:var(--face),serif;font-size:23px;line-height:1.7;letter-spacing:1px;padding:14px 0;border-top:1px solid #74674c33}.quote{font-family:var(--face),serif;font-size:27px;letter-spacing:3px;margin-top:22px}.body{font:12px/1.9 -apple-system,sans-serif;color:#636b5d}
+.zoom-proof{zoom:2}.zoom-proof body{padding:18px}.zoom-proof .grid{grid-template-columns:1fr;max-width:520px}.fallback-proof .brand,.fallback-proof .hero,.fallback-proof .paper h2,.fallback-proof .small,.fallback-proof .quote{font-family:'Songti SC',serif!important}</style></head><body><div class="intro">真实中文字形 · 同尺寸 / 同背景 / 同容器 · 开场标题与档案弹窗</div><div class="grid">
+<section class="sample" style="--face:'Ma Shan Zheng'"><div class="label">A / Ma Shan Zheng · 毛笔行楷</div><div class="dark"><div class="brand">第七个孩子</div><h1 class="hero">请在熄灯前<br>回家。</h1></div><div class="paper"><div class="kicker">EVIDENCE ARCHIVE</div><h2>已发现的线索</h2><div class="small">广播里的童谣</div><div class="small">小木凳上的手印</div><div class="quote">你听见了。</div></div></section>
+<section class="sample" style="--face:'Long Cang'"><div class="label">B / Long Cang · 行草手写</div><div class="dark"><div class="brand">第七个孩子</div><h1 class="hero">请在熄灯前<br>回家。</h1></div><div class="paper"><div class="kicker">EVIDENCE ARCHIVE</div><h2>已发现的线索</h2><div class="small">广播里的童谣</div><div class="small">小木凳上的手印</div><div class="quote">你听见了。</div></div></section>
+<section class="sample" style="--face:'Noto Serif SC'"><div class="label">C / Noto Serif SC · 档案印刷标题（选用）</div><div class="dark"><div class="brand">第七个孩子</div><h1 class="hero">请在熄灯前<br>回家。</h1></div><div class="paper"><div class="kicker">EVIDENCE ARCHIVE</div><h2>已发现的线索</h2><div class="small">广播里的童谣</div><div class="small">小木凳上的手印</div><div class="quote">你听见了。</div></div></section>
+</div><script>const proof=new URLSearchParams(location.search).get('proof');if(proof==='zoom')document.documentElement.classList.add('zoom-proof');if(proof==='fallback')document.documentElement.classList.add('fallback-proof');Promise.all(['Ma Shan Zheng','Long Cang','Noto Serif SC'].map(f=>document.fonts.load('400 46px "'+f+'"','请在熄灯前回家已发现的线索'))).then(()=>{document.body.dataset.fontsReady=String(['Ma Shan Zheng','Long Cang','Noto Serif SC'].every(f=>document.fonts.check('400 46px "'+f+'"','请在熄灯前回家已发现的线索')));document.body.append(Object.assign(document.createElement('p'),{textContent:'字体加载完成'}))})</script></body></html>

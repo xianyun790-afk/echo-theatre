@@ -1,0 +1,17 @@
+{
+  "configured": true,
+  "authentication": "passed",
+  "session_creation": "passed",
+  "pipeline_configuration": "passed",
+  "rtc_channel_info": "passed",
+  "rtc_token": "received",
+  "trial": "audio RTC trial activated; 60 minutes / 3 months",
+  "voice": "male_lingfeiyixf",
+  "model": "SenseNova-V7.0-omni",
+  "secrets_included": false,
+  "browser_rtc_join": "passed",
+  "response_text": "received without duplication",
+  "response_audio_bytes": 41739,
+  "text_session_cleanup": "passed",
+  "microphone_capture": "not exercised with human speech"
+}

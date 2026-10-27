@@ -1,0 +1,16 @@
+[
+  {
+    "kind": "background",
+    "paused": false,
+    "ready": 4,
+    "src": "/audio/background-music.mp3",
+    "time": 1.852942
+  },
+  {
+    "kind": "voice",
+    "paused": false,
+    "ready": 4,
+    "src": "/api/tts/stool",
+    "time": 1.249624
+  }
+]

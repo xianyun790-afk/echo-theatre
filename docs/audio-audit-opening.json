@@ -1,0 +1,38 @@
+{
+  "song": [
+    {
+      "paused": false,
+      "src": "/audio/opening-song.mp3",
+      "time": 2.78222
+    },
+    {
+      "paused": true,
+      "src": "/audio/background-music.mp3",
+      "time": 0
+    }
+  ],
+  "opening": [
+    {
+      "paused": false,
+      "src": "/audio/background-music.mp3",
+      "time": 2.767547
+    },
+    {
+      "paused": false,
+      "src": "/api/tts/n01-return",
+      "time": 2.529865
+    }
+  ],
+  "dining": [
+    {
+      "paused": false,
+      "src": "/audio/background-music.mp3",
+      "time": 13.487458
+    },
+    {
+      "paused": false,
+      "src": "/api/tts/n02-dining-room",
+      "time": 2.842136
+    }
+  ]
+}

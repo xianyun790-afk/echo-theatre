@@ -1,0 +1,196 @@
+{
+  "profile": "clear-pcm-v1",
+  "mode": "cache-only",
+  "clips": [
+    {
+      "clip": "n01-return",
+      "cached": true,
+      "bytes": 630316
+    },
+    {
+      "clip": "n02-dining-room",
+      "cached": true,
+      "bytes": 549676
+    },
+    {
+      "clip": "n03-radio-focus",
+      "cached": true,
+      "bytes": 169516
+    },
+    {
+      "clip": "n04-song-ended",
+      "cached": true,
+      "bytes": 588844
+    },
+    {
+      "clip": "n05-rain-window",
+      "cached": true,
+      "bytes": 588844
+    },
+    {
+      "clip": "n06-old-cabinet",
+      "cached": true,
+      "bytes": 528940
+    },
+    {
+      "clip": "n07-under-table",
+      "cached": true,
+      "bytes": 621100
+    },
+    {
+      "clip": "n08-handprint",
+      "cached": true,
+      "bytes": 681004
+    },
+    {
+      "clip": "n09-evidence-recorded",
+      "cached": true,
+      "bytes": 425260
+    },
+    {
+      "clip": "n10-ask-xu",
+      "cached": true,
+      "bytes": 538156
+    },
+    {
+      "clip": "n11-tape-received",
+      "cached": true,
+      "bytes": 630316
+    },
+    {
+      "clip": "n12-ready-to-gather",
+      "cached": true,
+      "bytes": 671788
+    },
+    {
+      "clip": "n13-at-the-table",
+      "cached": true,
+      "bytes": 579628
+    },
+    {
+      "clip": "n14-statements-begin",
+      "cached": true,
+      "bytes": 609580
+    },
+    {
+      "clip": "n15-questions-begin",
+      "cached": true,
+      "bytes": 549676
+    },
+    {
+      "clip": "n16-judgment-begin",
+      "cached": true,
+      "bytes": 692524
+    },
+    {
+      "clip": "n17-act-one-end",
+      "cached": true,
+      "bytes": 579628
+    },
+    {
+      "clip": "replay",
+      "cached": true,
+      "bytes": 365356
+    },
+    {
+      "clip": "stool",
+      "cached": true,
+      "bytes": 261676
+    },
+    {
+      "clip": "stool-known",
+      "cached": true,
+      "bytes": 374572
+    },
+    {
+      "clip": "numbers",
+      "cached": true,
+      "bytes": 487468
+    },
+    {
+      "clip": "hint-stool",
+      "cached": true,
+      "bytes": 383788
+    },
+    {
+      "clip": "hint-tape",
+      "cached": true,
+      "bytes": 496684
+    },
+    {
+      "clip": "fallback",
+      "cached": true,
+      "bytes": 365356
+    },
+    {
+      "clip": "boundary",
+      "cached": true,
+      "bytes": 436780
+    },
+    {
+      "clip": "council-received",
+      "cached": true,
+      "bytes": 261676
+    },
+    {
+      "clip": "council-boundary",
+      "cached": true,
+      "bytes": 528940
+    },
+    {
+      "clip": "tape",
+      "cached": true,
+      "bytes": 558892
+    },
+    {
+      "clip": "liang",
+      "cached": true,
+      "bytes": 503596
+    },
+    {
+      "clip": "council-xu",
+      "cached": true,
+      "bytes": 528940
+    },
+    {
+      "clip": "council-shen",
+      "cached": true,
+      "bytes": 570412
+    },
+    {
+      "clip": "council-zhou",
+      "cached": true,
+      "bytes": 542764
+    },
+    {
+      "clip": "council-cheng",
+      "cached": true,
+      "bytes": 568108
+    },
+    {
+      "clip": "council-tang",
+      "cached": true,
+      "bytes": 639532
+    },
+    {
+      "clip": "council-question-print",
+      "cached": true,
+      "bytes": 538156
+    },
+    {
+      "clip": "council-question-tape",
+      "cached": true,
+      "bytes": 657964
+    },
+    {
+      "clip": "council-question-numbers",
+      "cached": true,
+      "bytes": 549676
+    },
+    {
+      "clip": "council-question-open",
+      "cached": true,
+      "bytes": 657964
+    }
+  ]
+}

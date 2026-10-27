@@ -1,0 +1,477 @@
+{
+  "title": "第七个孩子 · 第一幕配音清稿",
+  "scope": "First act; seven distinct NIA voices; 38 base scripts plus 20 targeted question variants; fixed playback cache only",
+  "voices": [
+    {
+      "id": "narrator_host",
+      "role": "旁白／主持人",
+      "reference": "你提供的 minimax-1792584016789.mp3（项目内 narrator-reference.mp3）",
+      "direction": "低沉、沉稳、克制，普通话清楚，正常语速，不拖长句首。主持人提问更直接。",
+      "name": "晚舟",
+      "provider": "NIA",
+      "nia_voice_id": "male_ruyayichen_hs2"
+    },
+    {
+      "id": "xu",
+      "role": "许知音／声音修复师",
+      "direction": "清晰、细致、审慎，谈录音时有专业感，自然停顿。",
+      "name": "小栗",
+      "provider": "NIA",
+      "nia_voice_id": "female_mizai_hs2"
+    },
+    {
+      "id": "liang",
+      "role": "梁素琴",
+      "direction": "温和、生活化，像招呼熟人。成熟疲惫的表演感仍需试听调整；如烟虽列在文档，但本账户接口拒绝。",
+      "name": "暖暖",
+      "provider": "NIA",
+      "nia_voice_id": "female_jitangnv_hs2"
+    },
+    {
+      "id": "shen",
+      "role": "沈时安／精神科医生",
+      "direction": "平稳、理性，语速均匀，先澄清事实。",
+      "name": "云峥",
+      "provider": "NIA",
+      "nia_voice_id": "male_lingfeiyixf"
+    },
+    {
+      "id": "zhou",
+      "role": "周叙／纪录片摄影师",
+      "direction": "明朗、自然、清晰，解释缺失影像时不刻意心虚；星野虽列在文档，但本账户接口拒绝。",
+      "name": "林舟",
+      "provider": "NIA",
+      "nia_voice_id": "male_wennuanahu"
+    },
+    {
+      "id": "cheng",
+      "role": "程野／建筑工程师",
+      "direction": "中年男声，稳重、可靠、直接，重视物证与结论边界。",
+      "name": "青木",
+      "provider": "NIA",
+      "nia_voice_id": "male_dayi_hs2"
+    },
+    {
+      "id": "tang",
+      "role": "唐棠／童书插画师",
+      "direction": "轻柔、温暖、略有迟疑，提到孩子时情绪轻微变化。",
+      "name": "青禾",
+      "provider": "NIA",
+      "nia_voice_id": "female_linjianvhai"
+    }
+  ],
+  "existing_song": {
+    "voice_id": "song_original",
+    "path": "public/audio/opening-song.mp3",
+    "generate": false
+  },
+  "clips": [
+    {
+      "id": "N01",
+      "filename": "n01-return.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "歌曲播放完后的背景交代",
+      "status": "已绑定场景旁白",
+      "text": "雨把山路冲成灰白色。二十年后，你再次回到白榆儿童之家。今晚，一封没有署名的信，把你带回了这里。"
+    },
+    {
+      "id": "N02",
+      "filename": "n02-dining-room.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "进入餐厅后的环境交代；可与 N01 二选一或顺接",
+      "status": "已绑定场景旁白",
+      "text": "餐厅里有一股潮湿的旧木头气味。桌上的饭菜已经凉了，灯却还亮着。椅子的影子拖在地板上，像有人刚刚离席。"
+    },
+    {
+      "id": "N03",
+      "filename": "n03-radio-focus.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "首次走近旧广播；不要盖住歌曲",
+      "status": "已绑定场景旁白",
+      "text": "墙上的旧广播，外壳已经斑驳。你凑近时，能听见细微的电流声。刚才的歌声，就是从这里传出来的。"
+    },
+    {
+      "id": "N04",
+      "filename": "n04-song-ended.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "首次完整听完歌曲；与 N01、N02 按节奏选择，避免连续堆播",
+      "status": "已绑定场景旁白",
+      "text": "歌声停了。餐厅里，只剩下窗外的雨。没有人说清楚，这首歌为什么会在今晚响起。你可以再听一次，也可以先看看餐桌下面。"
+    },
+    {
+      "id": "N05",
+      "filename": "n05-rain-window.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "点击雨窗",
+      "status": "已绑定场景旁白",
+      "text": "雨水沿着玻璃往下流。窗外的树影，被水珠拉得歪斜模糊。你看不清更远的地方，这扇窗暂时没有给你新的线索。"
+    },
+    {
+      "id": "N06",
+      "filename": "n06-old-cabinet.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "检查旧木柜",
+      "status": "已绑定场景旁白",
+      "text": "柜门有些卡住了。你顺着缝隙往里看，只看见几只落了灰的旧碗。身后，广播里的电流声，忽然变得清楚了一点。"
+    },
+    {
+      "id": "N07",
+      "filename": "n07-under-table.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "镜头移到餐桌下面",
+      "status": "已绑定场景旁白",
+      "text": "你弯下身，拨开桌边的阴影。主位下面，藏着一只儿童用的小木凳。凳面上积着灰，中央却有一块不太一样的痕迹。"
+    },
+    {
+      "id": "N08",
+      "filename": "n08-handprint.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "点击凳面手印",
+      "status": "已绑定场景旁白",
+      "text": "那是一道小手印。周围的灰尘还在，只有手掌碰过的地方露出了木头的颜色。有人近期碰过这只凳子，但你还不知道，那个人是谁。"
+    },
+    {
+      "id": "N09",
+      "filename": "n09-evidence-recorded.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "手印首次收入证据本",
+      "status": "已绑定场景旁白",
+      "text": "你记下手印的位置。它是一条实物线索，却还不是答案。手印小，并不等于留下它的人，一定是个孩子。"
+    },
+    {
+      "id": "N10",
+      "filename": "n10-ask-xu.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "发现手印后，提示询问磁带；与 H06 二选一",
+      "status": "已绑定场景旁白",
+      "text": "广播和小木凳，都还藏着没有解释的疑点。许知音带来了一盘磁带。也许，你可以先问问她，那盘磁带和今晚的歌声，有没有关系。"
+    },
+    {
+      "id": "N11",
+      "filename": "n11-tape-received.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "许知音公开磁带之后",
+      "status": "已绑定场景旁白",
+      "text": "磁带被放到了桌上。它来自邀请函，却还没有和广播完成比对。现在，你们多了一份可以核对的材料，还不能判断两段录音是否相同。"
+    },
+    {
+      "id": "N12",
+      "filename": "n12-ready-to-gather.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "三条线索收齐；提示集中推理",
+      "status": "已绑定场景旁白",
+      "text": "童谣、小木凳上的手印，还有许知音带来的磁带。三条线索，都摆在了你们面前。是时候回到同一张桌前，听听每个人知道些什么。"
+    },
+    {
+      "id": "N13",
+      "filename": "n13-at-the-table.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "进入集中推理",
+      "status": "已绑定场景旁白",
+      "text": "六个人重新坐回餐桌前。雨还在下，旧广播暂时安静了。接下来，请把你亲眼看见、亲耳听见的事情说出来。"
+    },
+    {
+      "id": "N14",
+      "filename": "n14-statements-begin.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "开始轮流陈述",
+      "status": "已绑定场景旁白",
+      "text": "林见秋，先从你开始。说出一条你愿意公开的观察，并指出它对应的线索。你可以保留私人记忆，但请分清事实和猜测。"
+    },
+    {
+      "id": "N15",
+      "filename": "n15-questions-begin.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "所有人完成本轮陈述",
+      "status": "已绑定场景旁白",
+      "text": "本轮陈述已经结束。你可以选择一位在场者，围绕已经公开的证据继续追问。那些含糊的地方，需要有人把它说清楚。"
+    },
+    {
+      "id": "N16",
+      "filename": "n16-judgment-begin.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "进入暂定判断",
+      "status": "已绑定场景旁白",
+      "text": "现在，请选出你认为最值得优先验证的疑点。是童谣的来源，手印的主人，还是磁带与广播之间的关系？这只是本轮判断，还不是最后的真相。"
+    },
+    {
+      "id": "N17",
+      "filename": "n17-act-one-end.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "保存集中推理记录；第一幕结束",
+      "status": "已绑定场景旁白",
+      "text": "你们记下了本轮判断。谁重新播放了童谣？那只小木凳，最近被谁碰过？答案仍然藏在这栋房子里。今晚，你们才刚刚回来。"
+    },
+    {
+      "id": "H01",
+      "filename": "replay.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "要求重听广播；说完接原歌曲",
+      "status": "现有回应清稿",
+      "text": "我们再听一遍。以录音中的实际内容为准，留意声音，也留意自己的联想。"
+    },
+    {
+      "id": "H02",
+      "filename": "stool.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "尚未发现木凳时，询问餐桌下面",
+      "status": "现有回应清稿",
+      "text": "先把目光移到餐桌下面。主位下，似乎还藏着一只小木凳。"
+    },
+    {
+      "id": "H03",
+      "filename": "stool-known.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "发现手印后，再次询问手印",
+      "status": "现有回应清稿",
+      "text": "你们看见凳面灰尘上的手印了。它能说明近期有人触碰过，却还不能说明是谁。"
+    },
+    {
+      "id": "H04",
+      "filename": "numbers.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "询问童谣能否证明人数或身份",
+      "status": "现有回应清稿",
+      "text": "请以当前广播录音为准。不能仅凭童谣确定在场人数或任何人的身份，我们还需要独立的记录或证词。"
+    },
+    {
+      "id": "H05",
+      "filename": "hint-stool.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "尚未找到手印时请求提示",
+      "status": "现有回应清稿",
+      "text": "广播已经响过。你可以重听童谣，或者检查餐桌下面，寻找实物证据。"
+    },
+    {
+      "id": "H06",
+      "filename": "hint-tape.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "找到手印后请求提示；与 N10 二选一",
+      "status": "现有回应清稿",
+      "text": "你们已发现童谣和小木凳。可以问问许知音，今晚的广播与她带来的磁带是否相同。"
+    },
+    {
+      "id": "H07",
+      "filename": "fallback.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "问题未匹配当前预设；已去掉技术演示说明",
+      "status": "现有回应清稿",
+      "text": "你可以重听童谣，查看餐桌下的小木凳，或问许知音关于磁带的事。"
+    },
+    {
+      "id": "H08",
+      "filename": "boundary.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "搜证中追问后续真相或其他角色秘密",
+      "status": "现有回应清稿",
+      "text": "现在仍在第一幕。我们只讨论已经公开的信息，其他角色的私人记忆，需要由本人决定是否讲述。"
+    },
+    {
+      "id": "H09",
+      "filename": "council-received.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "收到林见秋的公开陈述",
+      "status": "现有回应清稿",
+      "text": "你的陈述已记录。接下来听取其他人的公开观察。"
+    },
+    {
+      "id": "H10",
+      "filename": "council-boundary.mp3",
+      "voice_id": "narrator_host",
+      "trigger": "集中推理中要求直接指认或公开私人剧本",
+      "status": "现有回应清稿",
+      "text": "当前只有第一幕的公开证据。其他人的私人剧本不能代为公开，现在也不足以指认凶手。"
+    },
+    {
+      "id": "R01",
+      "filename": "tape.mp3",
+      "voice_id": "xu",
+      "trigger": "搜证中第一次询问许知音的磁带；已去掉演示标签",
+      "status": "现有回应清稿",
+      "text": "我带来了邀请函附的磁带，它与今晚广播是否同版，还需要比对。目前不足以判断录音的来源或剪接过程。"
+    },
+    {
+      "id": "R02",
+      "filename": "liang.mp3",
+      "voice_id": "liang",
+      "trigger": "询问谁开了广播，或梁素琴、顾院长的情况",
+      "status": "现有回应清稿",
+      "text": "钥匙在桌上，先坐吧。广播是谁开的？我没亲眼看见。顾院长说明早会把档案交出来。"
+    },
+    {
+      "id": "R03",
+      "filename": "council-xu.mp3",
+      "voice_id": "xu",
+      "trigger": "许知音集中陈述",
+      "status": "现有回应清稿",
+      "text": "我带来了邀请函附的磁带。它与今晚广播是否同一版本，还没有完成比对；现在不能断言录音经过剪接。"
+    },
+    {
+      "id": "R04",
+      "filename": "council-shen.mp3",
+      "voice_id": "shen",
+      "trigger": "沈时安集中陈述",
+      "status": "现有回应清稿",
+      "text": "我想先区分我们听见的内容和自己的联想。熟悉的歌声会唤起记忆，但不能把模糊记忆当成确定事实。"
+    },
+    {
+      "id": "R05",
+      "filename": "council-zhou.mp3",
+      "voice_id": "zhou",
+      "trigger": "周叙集中陈述",
+      "status": "现有回应清稿",
+      "text": "我没有拍到是谁开启广播。我的镜头不能替任何人证明这件事。现在关于播放者的说法，都还需要证据。"
+    },
+    {
+      "id": "R06",
+      "filename": "council-cheng.mp3",
+      "voice_id": "cheng",
+      "trigger": "程野集中陈述",
+      "status": "现有回应清稿",
+      "text": "小木凳上的灰尘被碰过，这值得记录。但仅凭一道手印，不能判断触碰者是谁，也不能确定触碰的准确时间。"
+    },
+    {
+      "id": "R07",
+      "filename": "council-tang.mp3",
+      "voice_id": "tang",
+      "trigger": "唐棠集中陈述",
+      "status": "现有回应清稿",
+      "text": "看到小木凳，我会想到这里以前住过的孩子。可这是我的联想。凳子矮、手印小，都不能替代对身份的核实。"
+    }
+  ],
+  "question_templates": [
+    {
+      "id": "Q01",
+      "shared_filename": "council-question-print.mp3",
+      "trigger": "询问手印、木凳或触碰者",
+      "text": "凳面的灰尘有新鲜手印，能说明近期被触碰过。但这条线索没有告诉我们触碰者是谁，也没有给出准确时间。",
+      "variants": [
+        {
+          "voice_id": "xu",
+          "filename": "council-question-print-xu.mp3"
+        },
+        {
+          "voice_id": "shen",
+          "filename": "council-question-print-shen.mp3"
+        },
+        {
+          "voice_id": "zhou",
+          "filename": "council-question-print-zhou.mp3"
+        },
+        {
+          "voice_id": "cheng",
+          "filename": "council-question-print-cheng.mp3"
+        },
+        {
+          "voice_id": "tang",
+          "filename": "council-question-print-tang.mp3"
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "shared_filename": "council-question-tape.mp3",
+      "trigger": "询问磁带比对、录音差异或剪接",
+      "text": "许知音提供了邀请函附的磁带，但还没有完成比对。没有证据确认它与广播相同或不同，也不能断言录音经过剪接。",
+      "variants": [
+        {
+          "voice_id": "xu",
+          "filename": "council-question-tape-xu.mp3"
+        },
+        {
+          "voice_id": "shen",
+          "filename": "council-question-tape-shen.mp3"
+        },
+        {
+          "voice_id": "zhou",
+          "filename": "council-question-tape-zhou.mp3"
+        },
+        {
+          "voice_id": "cheng",
+          "filename": "council-question-tape-cheng.mp3"
+        },
+        {
+          "voice_id": "tang",
+          "filename": "council-question-tape-tang.mp3"
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "shared_filename": "council-question-numbers.mp3",
+      "trigger": "询问童谣是否证明人数或身份",
+      "text": "以当前广播录音为准。童谣本身不能证明在场人数，更不能确认身份。我们需要独立的记录或证词。",
+      "variants": [
+        {
+          "voice_id": "xu",
+          "filename": "council-question-numbers-xu.mp3"
+        },
+        {
+          "voice_id": "shen",
+          "filename": "council-question-numbers-shen.mp3"
+        },
+        {
+          "voice_id": "zhou",
+          "filename": "council-question-numbers-zhou.mp3"
+        },
+        {
+          "voice_id": "cheng",
+          "filename": "council-question-numbers-cheng.mp3"
+        },
+        {
+          "voice_id": "tang",
+          "filename": "council-question-numbers-tang.mp3"
+        }
+      ]
+    },
+    {
+      "id": "Q04",
+      "shared_filename": "council-question-open.mp3",
+      "trigger": "其他公开证据问题",
+      "text": "我目前能提供的，是刚才已经公开的观察。我们可以查童谣的来源、手印，或比对磁带与广播；这些证据都还不能确定幕后的人。",
+      "variants": [
+        {
+          "voice_id": "xu",
+          "filename": "council-question-open-xu.mp3"
+        },
+        {
+          "voice_id": "shen",
+          "filename": "council-question-open-shen.mp3"
+        },
+        {
+          "voice_id": "zhou",
+          "filename": "council-question-open-zhou.mp3"
+        },
+        {
+          "voice_id": "cheng",
+          "filename": "council-question-open-cheng.mp3"
+        },
+        {
+          "voice_id": "tang",
+          "filename": "council-question-open-tang.mp3"
+        }
+      ]
+    }
+  ],
+  "optional_private": {
+    "id": "P01",
+    "filename": "private-lin-act-one.mp3",
+    "voice_id": "narrator_host",
+    "audience": "林见秋本人；禁止公共自动播放",
+    "text": "二十年前，你从白榆儿童之家的火里获救。如今，你始终记不起火灾前最后半小时。今晚，一封没有署名的信，把你带回这里。邀请函背面，只有四个字：你听见了。你还记得一把红绳钥匙的触感，却不记得自己为什么拿着它。你从未把这件事告诉任何人。"
+  },
+  "integration_notes": [
+    "N01-N17 bound to scene events; all 38 base clips generated and cached",
+    "Subtitles precede speech; fade-in and fade-out; stale playback chains cancelled",
+    "Q clips choose role configuration via speaker query parameter; variants cached separately",
+    "BGM paused for song, microphone and council speech; user music/mute preferences preserved",
+    "Judgment saved immediately; N17 plays in result dialog and stops when dialog closes"
+  ],
+  "runtime_provider": {
+    "name": "SenseAudio",
+    "model": "sensenova-tts-2.0",
+    "voice_name": "播音",
+    "roles_share_voice": true,
+    "source": "account-owned voice; API synthesis verified"
+  }
+}

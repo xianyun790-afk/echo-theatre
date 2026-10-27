@@ -1,0 +1,77 @@
+[
+  {
+    "person": "许知音",
+    "audio": [
+      {
+        "paused": true,
+        "src": "/audio/background-music.mp3",
+        "time": 0.103599
+      },
+      {
+        "paused": false,
+        "src": "/api/tts/council-xu",
+        "time": 0.400458
+      }
+    ]
+  },
+  {
+    "person": "沈时安",
+    "audio": [
+      {
+        "paused": true,
+        "src": "/audio/background-music.mp3",
+        "time": 0.103599
+      },
+      {
+        "paused": false,
+        "src": "/api/tts/council-shen",
+        "time": 0.401366
+      }
+    ]
+  },
+  {
+    "person": "周叙",
+    "audio": [
+      {
+        "paused": true,
+        "src": "/audio/background-music.mp3",
+        "time": 0.103599
+      },
+      {
+        "paused": false,
+        "src": "/api/tts/council-zhou",
+        "time": 0.375138
+      }
+    ]
+  },
+  {
+    "person": "程野",
+    "audio": [
+      {
+        "paused": true,
+        "src": "/audio/background-music.mp3",
+        "time": 0.103599
+      },
+      {
+        "paused": false,
+        "src": "/api/tts/council-cheng",
+        "time": 0.380295
+      }
+    ]
+  },
+  {
+    "person": "唐棠",
+    "audio": [
+      {
+        "paused": true,
+        "src": "/audio/background-music.mp3",
+        "time": 0.103599
+      },
+      {
+        "paused": false,
+        "src": "/api/tts/council-tang",
+        "time": 0.415056
+      }
+    ]
+  }
+]

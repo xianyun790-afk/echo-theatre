@@ -1,0 +1,21 @@
+{
+  "question": [
+    {
+      "paused": true,
+      "src": "/audio/background-music.mp3",
+      "time": 0.103599
+    },
+    {
+      "paused": false,
+      "src": "/api/tts/council-question-print?speaker=xu",
+      "time": 0.513834
+    }
+  ],
+  "finished": [
+    {
+      "paused": false,
+      "src": "/audio/background-music.mp3",
+      "time": 0.361153
+    }
+  ]
+}

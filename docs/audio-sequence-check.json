@@ -1,0 +1,30 @@
+[
+  {
+    "phase": "before-entry",
+    "tracks": [
+      {
+        "kind": "music",
+        "paused": false,
+        "src": "/audio/opening-song.mp3",
+        "time": 2.968919
+      }
+    ]
+  },
+  {
+    "phase": "after-entry",
+    "tracks": [
+      {
+        "kind": "music",
+        "paused": false,
+        "src": "/audio/opening-song.mp3",
+        "time": 3.308758
+      },
+      {
+        "kind": "background",
+        "paused": true,
+        "src": "/audio/background-music.mp3",
+        "time": 0
+      }
+    ]
+  }
+]

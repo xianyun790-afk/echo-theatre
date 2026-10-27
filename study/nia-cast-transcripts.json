@@ -1,0 +1,51 @@
+[
+  {
+    "clip": "n01-return",
+    "role": "narrator_host",
+    "voice_id": "male_ruyayichen_hs2",
+    "seconds": 10.35,
+    "recognized": "与 把 山路 冲程 灰白色 二十年 后 你 再次 回到 白宇 儿童 之 家 今晚 皮肤 没有 署名 的 行 把 你 带回 了 这里"
+  },
+  {
+    "clip": "tape",
+    "role": "xu",
+    "voice_id": "female_mizai_hs2",
+    "seconds": 7.6,
+    "recognized": "我 带来 的 邀请函 负 的 磁带 他 与 今晚 广播 是否 铜板 还 需要 比对 目前 不足以 判断 录音 的 来源 和 简洁 过程"
+  },
+  {
+    "clip": "liang",
+    "role": "liang",
+    "voice_id": "female_jitangnv_hs2",
+    "seconds": 7.55,
+    "recognized": "要是 在 桌上 坐 吧 广播 是 谁 开 的 我 没 亲眼 看见 过 院长 说 明早 会 把 档案 交 出来"
+  },
+  {
+    "clip": "council-shen",
+    "role": "shen",
+    "voice_id": "male_lingfeiyixf",
+    "seconds": 9.8,
+    "recognized": "我 想 先 区分 我们 听见 的 内容 和 自己 的 联想 熟悉 的 歌声 会 唤起 既 但 不能 把 模糊 记忆 当成 确定 事实"
+  },
+  {
+    "clip": "council-zhou",
+    "role": "zhou",
+    "voice_id": "male_wennuanahu",
+    "seconds": 9.4,
+    "recognized": "我 没有 拍 到 是 谁 开启 广播 我 的 镜头 不能 提 任何人 证明 这件事 现在 关于 播放 着 的 说法 都 还 需要 证据"
+  },
+  {
+    "clip": "council-cheng",
+    "role": "cheng",
+    "voice_id": "male_dayi_hs2",
+    "seconds": 9.0,
+    "recognized": "想不到 上 的 灰尘 被 空管 这 只 的 记录 但 仅 凭 一道 首映 不能 判断 触碰 着 是 谁 也 不能 确定 触碰 的 准确 时间"
+  },
+  {
+    "clip": "council-tang",
+    "role": "tang",
+    "voice_id": "female_linjianvhai",
+    "seconds": 11.55,
+    "recognized": "看到 想不到 我 会 想到 这里 以前 住 过 的 孩子 可 是 我 的 联想 凳子 还 首映 想 都 不能 替代 对 身份 的 核实"
+  }
+]

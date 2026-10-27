@@ -1,0 +1,26 @@
+[
+  {
+    "mode": "zoom",
+    "proof": {
+      "titleFonts": [
+        "\"Ma Shan Zheng\", serif",
+        "\"Long Cang\", serif",
+        "\"Noto Serif SC\", serif"
+      ],
+      "titleOverflow": false,
+      "zoom": "2"
+    }
+  },
+  {
+    "mode": "fallback",
+    "proof": {
+      "titleFonts": [
+        "\"Songti SC\", serif",
+        "\"Songti SC\", serif",
+        "\"Songti SC\", serif"
+      ],
+      "titleOverflow": false,
+      "zoom": "1"
+    }
+  }
+]

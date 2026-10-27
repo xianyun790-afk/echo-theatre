@@ -1,0 +1,312 @@
+{
+  "scope": "Global Songti font-family implementation. This metric inventory covers title components; global CSS and live entry, room, council, form and dialog checks verify the remaining UI families.",
+  "locale": "zh-CN",
+  "page_type": "interactive-game",
+  "selected_font": {
+    "id": "source-han-serif-sc",
+    "css_family": "Archive Print",
+    "file": "public/fonts/archive-print.woff2",
+    "weights": [
+      400,
+      600
+    ],
+    "license": "SIL OFL 1.1"
+  },
+  "integration_contract": {
+    "art_direction_owner": "existing-project",
+    "layout_locked": true,
+    "media_locked": true,
+    "section_structure_locked": true,
+    "art_direction_locked": true,
+    "allowed_changes": [
+      "font_files",
+      "font_tokens",
+      "font_metrics",
+      "fallbacks",
+      "font_loading"
+    ],
+    "applied_out_of_scope_changes": []
+  },
+  "global_hierarchy": {
+    "signature_module": "hero_display",
+    "signature_font_id": "source-han-serif-sc",
+    "signature_style_category": "serif-editorial",
+    "signature_coverage": "full-primary-phrase",
+    "first_visual_language": "Chinese",
+    "hierarchy_reason": "User-requested consistent Songti across every title and interface label.",
+    "repetition_policy": "One printed serif family throughout the game; real 600 for headings and real 400 for reading and controls."
+  },
+  "modules": [
+    {
+      "module_id": "hero_display",
+      "selector": "[data-type-surface=\"entry-title\"]",
+      "surface_ids": [
+        "entry-title"
+      ],
+      "font_family": "Archive Print",
+      "font_size": {
+        "desktop": 49,
+        "phone": 36
+      },
+      "line_height": 1.65,
+      "letter_spacing": {
+        "desktop": 5,
+        "phone": 4
+      },
+      "desktop_lines": [
+        "请在熄灯前",
+        "回家。"
+      ],
+      "phone_lines": [
+        "请在熄灯前",
+        "回家。"
+      ],
+      "available_width": {
+        "desktop": 320,
+        "phone": 260
+      },
+      "font_id": "source-han-serif-sc",
+      "font_file": "public/fonts/archive-print.woff2",
+      "font_weight": 600,
+      "style_category": "serif-editorial",
+      "reason": "User explicitly requested a single Songti family for every game text surface."
+    },
+    {
+      "module_id": "brand_mark",
+      "selector": "[data-type-surface=\"game-brand\"]",
+      "surface_ids": [
+        "game-brand"
+      ],
+      "font_family": "Archive Print",
+      "font_size": {
+        "desktop": 25,
+        "phone": 21
+      },
+      "line_height": 1.35,
+      "letter_spacing": {
+        "desktop": 3,
+        "phone": 2
+      },
+      "desktop_lines": [
+        "第七个孩子"
+      ],
+      "phone_lines": [
+        "第七个孩子"
+      ],
+      "available_width": {
+        "desktop": 180,
+        "phone": 160
+      },
+      "font_id": "source-han-serif-sc",
+      "font_file": "public/fonts/archive-print.woff2",
+      "font_weight": 600,
+      "style_category": "serif-editorial",
+      "reason": "User explicitly requested a single Songti family for every game text surface."
+    },
+    {
+      "module_id": "section_heading",
+      "selector": ".council-heading h1",
+      "surface_ids": [
+        "council-title"
+      ],
+      "font_family": "Archive Print",
+      "font_size": {
+        "desktop": 33,
+        "phone": 28
+      },
+      "line_height": 1.35,
+      "letter_spacing": {
+        "desktop": 4,
+        "phone": 1
+      },
+      "desktop_lines": [
+        "请在熄灯前回家"
+      ],
+      "phone_lines": [
+        "请在熄灯前回家"
+      ],
+      "available_width": {
+        "desktop": 556,
+        "phone": 340
+      },
+      "page_regions": [
+        "council"
+      ],
+      "font_id": "source-han-serif-sc",
+      "font_file": "public/fonts/archive-print.woff2",
+      "font_weight": 600,
+      "style_category": "serif-editorial",
+      "reason": "User explicitly requested a single Songti family for every game text surface."
+    },
+    {
+      "module_id": "editorial_quote",
+      "selector": "[data-type-surface=\"private-letter-quote\"]",
+      "surface_ids": [
+        "private-letter-quote"
+      ],
+      "font_family": "Archive Print",
+      "font_size": {
+        "desktop": 29,
+        "phone": 29
+      },
+      "line_height": 1.5,
+      "letter_spacing": {
+        "desktop": 4,
+        "phone": 4
+      },
+      "desktop_lines": [
+        "你听见了。"
+      ],
+      "phone_lines": [
+        "你听见了。"
+      ],
+      "available_width": {
+        "desktop": 560,
+        "phone": 264
+      },
+      "font_id": "source-han-serif-sc",
+      "font_file": "public/fonts/archive-print.woff2",
+      "font_weight": 600,
+      "style_category": "serif-editorial",
+      "reason": "User explicitly requested a single Songti family for every game text surface."
+    },
+    {
+      "module_id": "section_heading",
+      "selector": ".panel h2",
+      "surface_ids": [
+        "panel-evidence-archive-title",
+        "panel-private-script-act-i-title",
+        "panel-local-demo-first-act-title",
+        "panel-pause-options-title",
+        "panel-conversation-log-title",
+        "panel-act-i-investigation-review-title"
+      ],
+      "font_family": "Archive Print",
+      "font_size": {
+        "desktop": 28,
+        "phone": 24
+      },
+      "line_height": 1.55,
+      "letter_spacing": {
+        "desktop": 3,
+        "phone": 2
+      },
+      "desktop_lines": [
+        "声音留下的记录"
+      ],
+      "phone_lines": [
+        "声音留下的记录"
+      ],
+      "available_width": {
+        "desktop": 560,
+        "phone": 244
+      },
+      "font_id": "source-han-serif-sc",
+      "font_file": "public/fonts/archive-print.woff2",
+      "font_weight": 600,
+      "style_category": "serif-editorial",
+      "page_regions": [
+        "archive"
+      ],
+      "reason": "User explicitly requested a single Songti family for every game text surface."
+    },
+    {
+      "module_id": "section_heading",
+      "selector": ".chapter-intro h1",
+      "surface_ids": [
+        "chapter-title"
+      ],
+      "font_family": "Archive Print",
+      "font_size": {
+        "desktop": 27,
+        "phone": 23
+      },
+      "line_height": 1.35,
+      "letter_spacing": {
+        "desktop": 3,
+        "phone": 1
+      },
+      "desktop_lines": [
+        "请在熄灯前回家"
+      ],
+      "phone_lines": [
+        "请在熄灯前回家"
+      ],
+      "available_width": {
+        "desktop": 556,
+        "phone": 340
+      },
+      "page_regions": [
+        "investigation"
+      ],
+      "font_id": "source-han-serif-sc",
+      "font_file": "public/fonts/archive-print.woff2",
+      "font_weight": 600,
+      "style_category": "serif-editorial",
+      "reason": "User explicitly requested a single Songti family for every game text surface."
+    }
+  ],
+  "candidate_comparison": {
+    "screenshot": "study/font-abc.jpg",
+    "loaded": true,
+    "font_checks": true,
+    "candidates": [
+      {
+        "id": "ma-shan-zheng",
+        "family": "Ma Shan Zheng",
+        "category": "calligraphic",
+        "result": "selected",
+        "reason": "The brush turns and heavier ink remain distinct on both the dark scene and light archive paper."
+      },
+      {
+        "id": "long-cang",
+        "family": "Long Cang",
+        "category": "handwritten",
+        "result": "rejected",
+        "reason": "Its looser, thinner strokes become uneven in compact archive headings and have less stable small-title silhouettes."
+      },
+      {
+        "id": "noto-serif-sc",
+        "family": "Noto Serif SC",
+        "category": "serif-editorial",
+        "result": "rejected",
+        "reason": "Clear but still close to the existing formal Songti character; insufficient distinction for the requested artistic headings."
+      }
+    ]
+  },
+  "reading_protection": "Popup long paragraphs use Archive Print 400 at 15px / 2.05 line height; input controls retain system UI. This is a title-component audit, not a full dynamic-app typography coverage claim.",
+  "qa": {
+    "desktop": {
+      "width": 1280,
+      "screenshot": "docs/archive-paper-title-update.jpg",
+      "font_loaded": true
+    },
+    "compact_desktop": {
+      "width": 1024,
+      "screenshot": "study/archive-1024.jpg",
+      "title_overflow": false
+    },
+    "phone": {
+      "width": 390,
+      "screenshot": "study/archive-390.jpg",
+      "title_overflow": false
+    },
+    "escape_close": true,
+    "glyph_coverage_missing_chinese": 0,
+    "zoom_200": "Not separately tested; existing UI layout was preserved."
+  },
+  "committed_font_ids": [
+    "ma-shan-zheng"
+  ],
+  "selected_print_font": {
+    "id": "source-han-serif-sc",
+    "actual_family": "Noto Serif SC",
+    "css_family": "Archive Print",
+    "weights": [
+      400,
+      600
+    ],
+    "source": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+    "license": "SIL OFL 1.1"
+  }
+}

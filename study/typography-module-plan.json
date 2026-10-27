@@ -1,0 +1,612 @@
+{
+  "schema_version": "6.0",
+  "locale": "zh-CN",
+  "page_type": "existing game title components",
+  "visual_voice": [
+    "gothic-storybook",
+    "aged-archive",
+    "restrained-brush-lettering"
+  ],
+  "user_preferences": [
+    "Damaged archive paper popups and more artistic Chinese titles; existing desktop game layout remains."
+  ],
+  "integration_contract": {
+    "art_direction_owner": "existing-project",
+    "layout_locked": true,
+    "media_locked": true,
+    "section_structure_locked": true,
+    "art_direction_locked": true,
+    "allowed_changes": [
+      "font_files",
+      "font_tokens",
+      "font_metrics",
+      "fallbacks",
+      "font_loading"
+    ],
+    "applied_out_of_scope_changes": [],
+    "input_page_plan": null,
+    "host_hero_mode": "existing-three-dimensional-game"
+  },
+  "global_hierarchy": {
+    "signature_module": "hero_display",
+    "signature_font_id": "source-han-serif-sc",
+    "signature_style_category": "serif-editorial",
+    "signature_coverage": "full-primary-phrase",
+    "first_visual_language": "Chinese",
+    "hierarchy_reason": "User-requested consistent Songti across every title and interface label.",
+    "repetition_policy": "One printed serif family throughout the game; real 600 for headings and real 400 for reading and controls.",
+    "expressive_required": false,
+    "signature_intent": "restrained",
+    "script_signature_required": false,
+    "rich_script_required": false
+  },
+  "expressive_distribution": {
+    "mode": "restrained",
+    "expressive_surface_ids": [],
+    "non_hero_expressive_surface_ids": [],
+    "expressive_module_types": [],
+    "expressive_page_regions": [],
+    "reading_protected_surface_ids": [
+      "entry-title",
+      "game-brand",
+      "council-title",
+      "private-letter-quote",
+      "panel-evidence-archive-title",
+      "panel-private-script-act-i-title",
+      "panel-local-demo-first-act-title",
+      "panel-pause-options-title",
+      "panel-conversation-log-title",
+      "panel-act-i-investigation-review-title",
+      "chapter-title"
+    ],
+    "expressive_font_ids": [],
+    "min_non_hero_expressive_surfaces": 0,
+    "max_active_families": 1,
+    "distribution_reason": "User explicitly requests Songti throughout: all titles, notes, paragraphs, metadata and form controls use Archive Print with Songti fallbacks. Layout and scene media are unchanged."
+  },
+  "coverage_audit": {
+    "scope": "component",
+    "dom_marker_attribute": "data-type-surface",
+    "visible_text_surface_ids": [
+      "entry-title",
+      "game-brand",
+      "council-title",
+      "private-letter-quote",
+      "panel-evidence-archive-title",
+      "panel-private-script-act-i-title",
+      "panel-local-demo-first-act-title",
+      "panel-pause-options-title",
+      "panel-conversation-log-title",
+      "panel-act-i-investigation-review-title",
+      "chapter-title"
+    ],
+    "covered_text_surface_ids": [
+      "entry-title",
+      "game-brand",
+      "council-title",
+      "private-letter-quote",
+      "panel-evidence-archive-title",
+      "panel-private-script-act-i-title",
+      "panel-local-demo-first-act-title",
+      "panel-pause-options-title",
+      "panel-conversation-log-title",
+      "panel-act-i-investigation-review-title",
+      "chapter-title"
+    ],
+    "uncovered_text_surface_ids": [],
+    "coverage_reason": "This audit covers the changed title component family, including dynamic dialog variants, brand, scene titles and the short letter quote. It does not claim a redesign or full audit of all dynamic application text."
+  },
+  "modules": [
+    {
+      "module_id": "hero_display",
+      "selector": "[data-type-surface=\"entry-title\"]",
+      "surface_ids": [
+        "entry-title"
+      ],
+      "page_regions": [
+        "hero"
+      ],
+      "text": "请在熄灯前 / 回家。",
+      "font_id": "source-han-serif-sc",
+      "font_family": "Archive Print",
+      "style_category": "serif-editorial",
+      "visual_priority": "signature",
+      "role_reason": "User explicitly requested a single Songti family for every game text surface.",
+      "art_direction_relationship": "Preserves the existing gothic room and muted archive palette; typography echoes handwritten records.",
+      "font_weight": 600,
+      "font_size": "49px desktop / 36px phone",
+      "line_height": 1.65,
+      "letter_spacing": "5px desktop / 4px phone",
+      "max_width": "320px representative available width",
+      "color": "#303a32 on paper / existing pale ink on scene",
+      "background": "Existing dark scene and user-requested aged archive paper",
+      "alignment": "left",
+      "fallback": "Kaiti SC, STKaiti, KaiTi, serif",
+      "locale_verified": true,
+      "font_loaded": true,
+      "license": {
+        "class": "open_source",
+        "source": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+        "verified_for_target": true
+      },
+      "layout_change_required": false,
+      "media_change_required": false,
+      "geometry_adjustments": {
+        "state": "unchanged",
+        "changes": [],
+        "evidence": "User-authorized journal modal is 720px wide on desktop; typography does not change the room or page structure. Actual glyph screenshots verify the dialog."
+      },
+      "rejected_candidates": [
+        {
+          "font_id": "ma-shan-zheng",
+          "style_category": "calligraphic",
+          "font_loaded": true,
+          "rendered_reason": "The brush turns and heavier ink remain distinct on both the dark scene and light archive paper.",
+          "screenshot": "study/journal-font-abc.jpg"
+        },
+        {
+          "font_id": "long-cang",
+          "style_category": "handwritten",
+          "font_loaded": true,
+          "rendered_reason": "Its looser, thinner strokes become uneven in compact archive headings and have less stable small-title silhouettes.",
+          "screenshot": "study/journal-font-abc.jpg"
+        }
+      ],
+      "line_break_checks": {
+        "desktop_lines": [
+          "请在熄灯前",
+          "回家。"
+        ],
+        "phone_lines": [
+          "请在熄灯前",
+          "回家。"
+        ],
+        "desktop_fit": {
+          "surface_id": "entry-title",
+          "viewport_width_px": 1280,
+          "available_width_px": 320,
+          "longest_line_width_px": 265.0,
+          "ratio": 0.8281
+        },
+        "phone_fit": {
+          "surface_id": "entry-title",
+          "viewport_width_px": 390,
+          "available_width_px": 260,
+          "longest_line_width_px": 196.0,
+          "ratio": 0.7538
+        },
+        "measurement_method": "FontTools hmtx advance widths from the final selected WOFF2 plus CSS letter spacing; desktop and narrow dialog title checks are recorded in study/journal-checks.json.",
+        "single_character_line_intentional": false,
+        "punctuation_only_line": false,
+        "evidence": "study/font-abc.jpg; study/typography-checks.json"
+      }
+    },
+    {
+      "module_id": "brand_mark",
+      "selector": "[data-type-surface=\"game-brand\"]",
+      "surface_ids": [
+        "game-brand"
+      ],
+      "page_regions": [
+        "header"
+      ],
+      "text": "第七个孩子",
+      "font_id": "source-han-serif-sc",
+      "font_family": "Archive Print",
+      "style_category": "serif-editorial",
+      "visual_priority": "support-display",
+      "role_reason": "User explicitly requested a single Songti family for every game text surface.",
+      "art_direction_relationship": "Preserves the existing gothic room and muted archive palette; typography echoes handwritten records.",
+      "font_weight": 600,
+      "font_size": "25px desktop / 21px phone",
+      "line_height": 1.35,
+      "letter_spacing": "3px desktop / 2px phone",
+      "max_width": "180px representative available width",
+      "color": "#303a32 on paper / existing pale ink on scene",
+      "background": "Existing dark scene and user-requested aged archive paper",
+      "alignment": "left",
+      "fallback": "Kaiti SC, STKaiti, KaiTi, serif",
+      "locale_verified": true,
+      "font_loaded": true,
+      "license": {
+        "class": "open_source",
+        "source": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+        "verified_for_target": true
+      },
+      "layout_change_required": false,
+      "media_change_required": false,
+      "geometry_adjustments": {
+        "state": "unchanged",
+        "changes": [],
+        "evidence": "User-authorized journal modal is 720px wide on desktop; typography does not change the room or page structure. Actual glyph screenshots verify the dialog."
+      },
+      "rejected_candidates": [
+        {
+          "font_id": "ma-shan-zheng",
+          "style_category": "calligraphic",
+          "font_loaded": true,
+          "rendered_reason": "The brush turns and heavier ink remain distinct on both the dark scene and light archive paper.",
+          "screenshot": "study/journal-font-abc.jpg"
+        },
+        {
+          "font_id": "long-cang",
+          "style_category": "handwritten",
+          "font_loaded": true,
+          "rendered_reason": "Its looser, thinner strokes become uneven in compact archive headings and have less stable small-title silhouettes.",
+          "screenshot": "study/journal-font-abc.jpg"
+        }
+      ],
+      "line_break_checks": {
+        "desktop_lines": [
+          "第七个孩子"
+        ],
+        "phone_lines": [
+          "第七个孩子"
+        ],
+        "desktop_fit": {
+          "surface_id": "game-brand",
+          "viewport_width_px": 1280,
+          "available_width_px": 180,
+          "longest_line_width_px": 137.0,
+          "ratio": 0.7611
+        },
+        "phone_fit": {
+          "surface_id": "game-brand",
+          "viewport_width_px": 390,
+          "available_width_px": 160,
+          "longest_line_width_px": 113.0,
+          "ratio": 0.7063
+        },
+        "measurement_method": "FontTools hmtx advance widths from the final selected WOFF2 plus CSS letter spacing; desktop and narrow dialog title checks are recorded in study/journal-checks.json.",
+        "single_character_line_intentional": false,
+        "punctuation_only_line": false,
+        "evidence": "study/font-abc.jpg; study/typography-checks.json"
+      }
+    },
+    {
+      "module_id": "section_heading",
+      "selector": ".council-heading h1",
+      "surface_ids": [
+        "council-title"
+      ],
+      "page_regions": [
+        "council"
+      ],
+      "text": "请在熄灯前回家",
+      "font_id": "source-han-serif-sc",
+      "font_family": "Archive Print",
+      "style_category": "serif-editorial",
+      "visual_priority": "support-display",
+      "role_reason": "User explicitly requested a single Songti family for every game text surface.",
+      "art_direction_relationship": "Preserves the existing gothic room and muted archive palette; typography echoes handwritten records.",
+      "font_weight": 600,
+      "font_size": "33px desktop / 28px phone",
+      "line_height": 1.35,
+      "letter_spacing": "4px desktop / 1px phone",
+      "max_width": "556px representative available width",
+      "color": "#303a32 on paper / existing pale ink on scene",
+      "background": "Existing dark scene and user-requested aged archive paper",
+      "alignment": "left",
+      "fallback": "Kaiti SC, STKaiti, KaiTi, serif",
+      "locale_verified": true,
+      "font_loaded": true,
+      "license": {
+        "class": "open_source",
+        "source": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+        "verified_for_target": true
+      },
+      "layout_change_required": false,
+      "media_change_required": false,
+      "geometry_adjustments": {
+        "state": "unchanged",
+        "changes": [],
+        "evidence": "User-authorized journal modal is 720px wide on desktop; typography does not change the room or page structure. Actual glyph screenshots verify the dialog."
+      },
+      "rejected_candidates": [
+        {
+          "font_id": "ma-shan-zheng",
+          "style_category": "calligraphic",
+          "font_loaded": true,
+          "rendered_reason": "The brush turns and heavier ink remain distinct on both the dark scene and light archive paper.",
+          "screenshot": "study/journal-font-abc.jpg"
+        },
+        {
+          "font_id": "long-cang",
+          "style_category": "handwritten",
+          "font_loaded": true,
+          "rendered_reason": "Its looser, thinner strokes become uneven in compact archive headings and have less stable small-title silhouettes.",
+          "screenshot": "study/journal-font-abc.jpg"
+        }
+      ],
+      "line_break_checks": {
+        "desktop_lines": [
+          "请在熄灯前回家"
+        ],
+        "phone_lines": [
+          "请在熄灯前回家"
+        ],
+        "desktop_fit": {
+          "surface_id": "council-title",
+          "viewport_width_px": 1280,
+          "available_width_px": 556,
+          "longest_line_width_px": 255.0,
+          "ratio": 0.4586
+        },
+        "phone_fit": {
+          "surface_id": "council-title",
+          "viewport_width_px": 390,
+          "available_width_px": 340,
+          "longest_line_width_px": 202.0,
+          "ratio": 0.5941
+        },
+        "measurement_method": "FontTools hmtx advance widths from the final selected WOFF2 plus CSS letter spacing; desktop and narrow dialog title checks are recorded in study/journal-checks.json.",
+        "single_character_line_intentional": false,
+        "punctuation_only_line": false,
+        "evidence": "study/font-abc.jpg; study/typography-checks.json"
+      }
+    },
+    {
+      "module_id": "editorial_quote",
+      "selector": "[data-type-surface=\"private-letter-quote\"]",
+      "surface_ids": [
+        "private-letter-quote"
+      ],
+      "page_regions": [
+        "private-script"
+      ],
+      "text": "你听见了。",
+      "font_id": "source-han-serif-sc",
+      "font_family": "Archive Print",
+      "style_category": "serif-editorial",
+      "visual_priority": "support-display",
+      "role_reason": "User explicitly requested a single Songti family for every game text surface.",
+      "art_direction_relationship": "Preserves the existing gothic room and muted archive palette; typography echoes handwritten records.",
+      "font_weight": 600,
+      "font_size": "29px desktop / 29px phone",
+      "line_height": 1.5,
+      "letter_spacing": "4px desktop / 4px phone",
+      "max_width": "560px representative available width",
+      "color": "#303a32 on paper / existing pale ink on scene",
+      "background": "Existing dark scene and user-requested aged archive paper",
+      "alignment": "left",
+      "fallback": "Kaiti SC, STKaiti, KaiTi, serif",
+      "locale_verified": true,
+      "font_loaded": true,
+      "license": {
+        "class": "open_source",
+        "source": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+        "verified_for_target": true
+      },
+      "layout_change_required": false,
+      "media_change_required": false,
+      "geometry_adjustments": {
+        "state": "unchanged",
+        "changes": [],
+        "evidence": "User-authorized journal modal is 720px wide on desktop; typography does not change the room or page structure. Actual glyph screenshots verify the dialog."
+      },
+      "rejected_candidates": [
+        {
+          "font_id": "ma-shan-zheng",
+          "style_category": "calligraphic",
+          "font_loaded": true,
+          "rendered_reason": "The brush turns and heavier ink remain distinct on both the dark scene and light archive paper.",
+          "screenshot": "study/journal-font-abc.jpg"
+        },
+        {
+          "font_id": "long-cang",
+          "style_category": "handwritten",
+          "font_loaded": true,
+          "rendered_reason": "Its looser, thinner strokes become uneven in compact archive headings and have less stable small-title silhouettes.",
+          "screenshot": "study/journal-font-abc.jpg"
+        }
+      ],
+      "line_break_checks": {
+        "desktop_lines": [
+          "你听见了。"
+        ],
+        "phone_lines": [
+          "你听见了。"
+        ],
+        "desktop_fit": {
+          "surface_id": "private-letter-quote",
+          "viewport_width_px": 1280,
+          "available_width_px": 560,
+          "longest_line_width_px": 161.0,
+          "ratio": 0.2875
+        },
+        "phone_fit": {
+          "surface_id": "private-letter-quote",
+          "viewport_width_px": 390,
+          "available_width_px": 264,
+          "longest_line_width_px": 161.0,
+          "ratio": 0.6098
+        },
+        "measurement_method": "FontTools hmtx advance widths from the final selected WOFF2 plus CSS letter spacing; desktop and narrow dialog title checks are recorded in study/journal-checks.json.",
+        "single_character_line_intentional": false,
+        "punctuation_only_line": false,
+        "evidence": "study/font-abc.jpg; study/typography-checks.json"
+      }
+    },
+    {
+      "module_id": "section_heading",
+      "selector": ".panel h2",
+      "surface_ids": [
+        "panel-evidence-archive-title",
+        "panel-private-script-act-i-title",
+        "panel-local-demo-first-act-title",
+        "panel-pause-options-title",
+        "panel-conversation-log-title",
+        "panel-act-i-investigation-review-title"
+      ],
+      "page_regions": [
+        "archive"
+      ],
+      "text": "声音留下的记录",
+      "font_id": "source-han-serif-sc",
+      "font_family": "Archive Print",
+      "style_category": "serif-editorial",
+      "visual_priority": "support-display",
+      "role_reason": "User explicitly requested a single Songti family for every game text surface.",
+      "art_direction_relationship": "Preserves the existing gothic room and muted archive palette; typography echoes handwritten records.",
+      "font_weight": 600,
+      "font_size": "28px desktop / 24px phone",
+      "line_height": 1.55,
+      "letter_spacing": "3px desktop / 2px phone",
+      "max_width": "560px representative available width",
+      "color": "#303a32 on paper / existing pale ink on scene",
+      "background": "Existing dark scene and user-requested aged archive paper",
+      "alignment": "left",
+      "fallback": "Kaiti SC, STKaiti, KaiTi, serif",
+      "locale_verified": true,
+      "font_loaded": true,
+      "license": {
+        "class": "open_source",
+        "source": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+        "verified_for_target": true
+      },
+      "layout_change_required": false,
+      "media_change_required": false,
+      "geometry_adjustments": {
+        "state": "unchanged",
+        "changes": [],
+        "evidence": "User-authorized journal modal is 720px wide on desktop; typography does not change the room or page structure. Actual glyph screenshots verify the dialog."
+      },
+      "rejected_candidates": [
+        {
+          "font_id": "ma-shan-zheng",
+          "style_category": "calligraphic",
+          "font_loaded": true,
+          "rendered_reason": "The brush turns and heavier ink remain distinct on both the dark scene and light archive paper.",
+          "screenshot": "study/journal-font-abc.jpg"
+        },
+        {
+          "font_id": "long-cang",
+          "style_category": "handwritten",
+          "font_loaded": true,
+          "rendered_reason": "Its looser, thinner strokes become uneven in compact archive headings and have less stable small-title silhouettes.",
+          "screenshot": "study/journal-font-abc.jpg"
+        }
+      ],
+      "line_break_checks": {
+        "desktop_lines": [
+          "声音留下的记录"
+        ],
+        "phone_lines": [
+          "声音留下的记录"
+        ],
+        "desktop_fit": {
+          "surface_id": "panel-evidence-archive-title",
+          "viewport_width_px": 1280,
+          "available_width_px": 560,
+          "longest_line_width_px": 214.0,
+          "ratio": 0.3821
+        },
+        "phone_fit": {
+          "surface_id": "panel-evidence-archive-title",
+          "viewport_width_px": 390,
+          "available_width_px": 244,
+          "longest_line_width_px": 180.0,
+          "ratio": 0.7377
+        },
+        "measurement_method": "FontTools hmtx advance widths from the final selected WOFF2 plus CSS letter spacing; desktop and narrow dialog title checks are recorded in study/journal-checks.json.",
+        "single_character_line_intentional": false,
+        "punctuation_only_line": false,
+        "evidence": "study/font-abc.jpg; study/typography-checks.json"
+      }
+    },
+    {
+      "module_id": "section_heading",
+      "selector": ".chapter-intro h1",
+      "surface_ids": [
+        "chapter-title"
+      ],
+      "page_regions": [
+        "investigation"
+      ],
+      "text": "请在熄灯前回家",
+      "font_id": "source-han-serif-sc",
+      "font_family": "Archive Print",
+      "style_category": "serif-editorial",
+      "visual_priority": "support-display",
+      "role_reason": "User explicitly requested a single Songti family for every game text surface.",
+      "art_direction_relationship": "Preserves the existing gothic room and muted archive palette; typography echoes handwritten records.",
+      "font_weight": 600,
+      "font_size": "27px desktop / 23px phone",
+      "line_height": 1.35,
+      "letter_spacing": "3px desktop / 1px phone",
+      "max_width": "556px representative available width",
+      "color": "#303a32 on paper / existing pale ink on scene",
+      "background": "Existing dark scene and user-requested aged archive paper",
+      "alignment": "left",
+      "fallback": "Kaiti SC, STKaiti, KaiTi, serif",
+      "locale_verified": true,
+      "font_loaded": true,
+      "license": {
+        "class": "open_source",
+        "source": "https://github.com/google/fonts/tree/main/ofl/notoserifsc",
+        "verified_for_target": true
+      },
+      "layout_change_required": false,
+      "media_change_required": false,
+      "geometry_adjustments": {
+        "state": "unchanged",
+        "changes": [],
+        "evidence": "User-authorized journal modal is 720px wide on desktop; typography does not change the room or page structure. Actual glyph screenshots verify the dialog."
+      },
+      "rejected_candidates": [
+        {
+          "font_id": "ma-shan-zheng",
+          "style_category": "calligraphic",
+          "font_loaded": true,
+          "rendered_reason": "The brush turns and heavier ink remain distinct on both the dark scene and light archive paper.",
+          "screenshot": "study/journal-font-abc.jpg"
+        },
+        {
+          "font_id": "long-cang",
+          "style_category": "handwritten",
+          "font_loaded": true,
+          "rendered_reason": "Its looser, thinner strokes become uneven in compact archive headings and have less stable small-title silhouettes.",
+          "screenshot": "study/journal-font-abc.jpg"
+        }
+      ],
+      "line_break_checks": {
+        "desktop_lines": [
+          "请在熄灯前回家"
+        ],
+        "phone_lines": [
+          "请在熄灯前回家"
+        ],
+        "desktop_fit": {
+          "surface_id": "chapter-title",
+          "viewport_width_px": 1280,
+          "available_width_px": 556,
+          "longest_line_width_px": 207.0,
+          "ratio": 0.3723
+        },
+        "phone_fit": {
+          "surface_id": "chapter-title",
+          "viewport_width_px": 390,
+          "available_width_px": 340,
+          "longest_line_width_px": 167.0,
+          "ratio": 0.4912
+        },
+        "measurement_method": "FontTools hmtx advance widths from the final selected WOFF2 plus CSS letter spacing; desktop and narrow dialog title checks are recorded in study/journal-checks.json.",
+        "single_character_line_intentional": false,
+        "punctuation_only_line": false,
+        "evidence": "study/font-abc.jpg; study/typography-checks.json"
+      }
+    }
+  ],
+  "committed_font_ids": [
+    "source-han-serif-sc"
+  ],
+  "license_notes": [
+    "SIL OFL 1.1 retained in public/fonts/MaShanZheng-OFL.txt and public/fonts/NotoSerifSC-OFL.txt; only selected fonts and weights are included in the runtime."
+  ],
+  "qa_screenshots": [
+    "docs/all-songti-entry.jpg",
+    "docs/all-songti-room.jpg",
+    "docs/all-songti-script.jpg",
+    "study/all-songti-checks.json"
+  ]
+}

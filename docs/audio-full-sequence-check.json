@@ -1,0 +1,52 @@
+[
+  {
+    "phase": "opening-ended",
+    "tracks": [
+      {
+        "kind": "background",
+        "paused": false,
+        "src": "/audio/background-music.mp3",
+        "time": 4.087119
+      }
+    ]
+  },
+  {
+    "phase": "radio-replay",
+    "tracks": [
+      {
+        "kind": "background",
+        "paused": true,
+        "src": "/audio/background-music.mp3",
+        "time": 4.579064
+      },
+      {
+        "kind": "music",
+        "paused": false,
+        "src": "/audio/opening-song.mp3",
+        "time": 0.084496
+      }
+    ]
+  },
+  {
+    "phase": "radio-stopped",
+    "tracks": [
+      {
+        "kind": "background",
+        "paused": false,
+        "src": "/audio/background-music.mp3",
+        "time": 4.946978
+      }
+    ]
+  },
+  {
+    "phase": "reset",
+    "tracks": [
+      {
+        "kind": "music",
+        "paused": false,
+        "src": "/audio/opening-song.mp3",
+        "time": 0.050451
+      }
+    ]
+  }
+]

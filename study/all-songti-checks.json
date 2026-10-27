@@ -1,0 +1,27 @@
+[
+  {
+    "screen": "entry",
+    "proof": {
+      "exceptions": [],
+      "fontLoaded": "true"
+    }
+  },
+  {
+    "screen": "council",
+    "proof": {
+      "exceptions": []
+    }
+  },
+  {
+    "screen": "room",
+    "proof": {
+      "exceptions": []
+    }
+  },
+  {
+    "screen": "script",
+    "proof": {
+      "exceptions": []
+    }
+  }
+]

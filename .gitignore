@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env*
+*.local
+*.tar.gz
+.DS_Store
+__pycache__/
+*.py[cod]
+.chinese-v6-download-cache/
+.openai/
+
+.local-asr/
+
+!.env.example

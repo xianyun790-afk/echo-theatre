@@ -1,0 +1,329 @@
+{
+  "selection_mode": "explicit-module-commit",
+  "requested_font_ids": [
+    "source-han-serif-sc"
+  ],
+  "catalog_count": 74,
+  "selected_count": 1,
+  "loaded_count": 1,
+  "failed_count": 0,
+  "css_file": "fonts/chinese-v6.css",
+  "report_file": "fonts/chinese-v6-font-download-report.json",
+  "cache_directory": ".chinese-v6-download-cache",
+  "results": [
+    {
+      "id": "source-han-serif-sc",
+      "family": "Source Han Serif SC",
+      "status": "existing",
+      "file": "source-han-serif-sc.ttf",
+      "bytes": 25125512,
+      "weight_descriptor": "100 900"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "source-han-sans-sc",
+      "status": "not-requested"
+    },
+    {
+      "id": "noto-sans-cjk-sc",
+      "status": "not-requested"
+    },
+    {
+      "id": "lxgw-wenkai",
+      "status": "not-requested"
+    },
+    {
+      "id": "lxgw-wenkai-tc",
+      "status": "not-requested"
+    },
+    {
+      "id": "ibm-plex",
+      "status": "not-requested"
+    },
+    {
+      "id": "smiley-sans",
+      "status": "not-requested"
+    },
+    {
+      "id": "ma-shan-zheng",
+      "status": "not-requested"
+    },
+    {
+      "id": "zcool-kuaile",
+      "status": "not-requested"
+    },
+    {
+      "id": "zcool-xiaowei",
+      "status": "not-requested"
+    },
+    {
+      "id": "zcool-qingke-huangyou",
+      "status": "not-requested"
+    },
+    {
+      "id": "iansui",
+      "status": "not-requested"
+    },
+    {
+      "id": "lxgw-wenkai-gb",
+      "status": "not-requested"
+    },
+    {
+      "id": "lxgw-wenkai-lite",
+      "status": "not-requested"
+    },
+    {
+      "id": "lxgw-zhenkai-gb",
+      "status": "not-requested"
+    },
+    {
+      "id": "lxgw-marker-gothic",
+      "status": "not-requested"
+    },
+    {
+      "id": "lxgw-neo-xihei",
+      "status": "not-requested"
+    },
+    {
+      "id": "lxgw-neo-zhisong",
+      "status": "not-requested"
+    },
+    {
+      "id": "xiaolai",
+      "status": "not-requested"
+    },
+    {
+      "id": "yozai",
+      "status": "not-requested"
+    },
+    {
+      "id": "black-sugar-plum-candy",
+      "status": "not-requested"
+    },
+    {
+      "id": "long-cang",
+      "status": "not-requested"
+    },
+    {
+      "id": "zhi-mang-xing",
+      "status": "not-requested"
+    },
+    {
+      "id": "liu-jian-mao-cao",
+      "status": "not-requested"
+    },
+    {
+      "id": "sarasa-gothic",
+      "status": "not-requested"
+    },
+    {
+      "id": "maple-mono-cn",
+      "status": "not-requested"
+    },
+    {
+      "id": "lxgw-bright-code",
+      "status": "not-requested"
+    },
+    {
+      "id": "ark-pixel",
+      "status": "not-requested"
+    },
+    {
+      "id": "fusion-pixel",
+      "status": "not-requested"
+    },
+    {
+      "id": "zhuque-fangsong",
+      "status": "not-requested"
+    },
+    {
+      "id": "plangothic",
+      "status": "not-requested"
+    },
+    {
+      "id": "chiron-hei-hk",
+      "status": "not-requested"
+    },
+    {
+      "id": "chiron-sung-hk",
+      "status": "not-requested"
+    },
+    {
+      "id": "douyin-sans",
+      "status": "not-requested"
+    },
+    {
+      "id": "alibaba-puhuiti-3",
+      "status": "manual-license",
+      "license_class": "brand_free"
+    },
+    {
+      "id": "alimama-shuheiti",
+      "status": "manual-license",
+      "license_class": "brand_free"
+    },
+    {
+      "id": "alimama-shuzhiti",
+      "status": "manual-license",
+      "license_class": "brand_free"
+    },
+    {
+      "id": "alimama-dongfang-dakai",
+      "status": "manual-license",
+      "license_class": "brand_free"
+    },
+    {
+      "id": "alimama-daoliti",
+      "status": "manual-license",
+      "license_class": "brand_free"
+    },
+    {
+      "id": "dingtalk-jinbuti",
+      "status": "manual-license",
+      "license_class": "brand_free"
+    },
+    {
+      "id": "misans",
+      "status": "manual-license",
+      "license_class": "proprietary_free"
+    },
+    {
+      "id": "harmonyos-sans",
+      "status": "manual-license",
+      "license_class": "proprietary_free"
+    },
+    {
+      "id": "oppo-sans",
+      "status": "manual-license",
+      "license_class": "proprietary_free"
+    },
+    {
+      "id": "honor-sans",
+      "status": "manual-license",
+      "license_class": "proprietary_free"
+    },
+    {
+      "id": "vivo-sans",
+      "status": "manual-license",
+      "license_class": "proprietary_free"
+    },
+    {
+      "id": "jd-langzheng",
+      "status": "manual-license",
+      "license_class": "brand_reference"
+    },
+    {
+      "id": "huninn",
+      "status": "not-requested"
+    },
+    {
+      "id": "chenyu-luoyan-thin",
+      "status": "not-requested"
+    },
+    {
+      "id": "jason-handwriting-1",
+      "status": "not-requested"
+    },
+    {
+      "id": "jason-handwriting-2",
+      "status": "not-requested"
+    },
+    {
+      "id": "jason-handwriting-3",
+      "status": "not-requested"
+    },
+    {
+      "id": "jason-handwriting-4",
+      "status": "not-requested"
+    },
+    {
+      "id": "jason-handwriting-5",
+      "status": "not-requested"
+    },
+    {
+      "id": "jason-handwriting-6",
+      "status": "not-requested"
+    },
+    {
+      "id": "jason-handwriting-7",
+      "status": "not-requested"
+    },
+    {
+      "id": "jason-handwriting-8",
+      "status": "not-requested"
+    },
+    {
+      "id": "jason-handwriting-9",
+      "status": "not-requested"
+    },
+    {
+      "id": "maoken-assorted-sans",
+      "status": "not-requested"
+    },
+    {
+      "id": "maoken-yingbi-kaishu",
+      "status": "not-requested"
+    },
+    {
+      "id": "kingnam-bobohei",
+      "status": "not-requested"
+    },
+    {
+      "id": "kingnam-yuanmo",
+      "status": "not-requested"
+    },
+    {
+      "id": "longzhuti",
+      "status": "not-requested"
+    },
+    {
+      "id": "slide-fu",
+      "status": "not-requested"
+    },
+    {
+      "id": "slide-youran",
+      "status": "not-requested"
+    },
+    {
+      "id": "slide-chunfeng",
+      "status": "not-requested"
+    },
+    {
+      "id": "slide-xiaxing",
+      "status": "not-requested"
+    },
+    {
+      "id": "slide-qiuhong",
+      "status": "not-requested"
+    },
+    {
+      "id": "chill-round",
+      "status": "not-requested"
+    },
+    {
+      "id": "chill-g-sans",
+      "status": "not-requested"
+    },
+    {
+      "id": "unbounded-sans",
+      "status": "not-requested"
+    },
+    {
+      "id": "cubic-11",
+      "status": "not-requested"
+    },
+    {
+      "id": "genwan-serif",
+      "status": "not-requested"
+    },
+    {
+      "id": "glow-sans",
+      "status": "not-requested"
+    },
+    {
+      "id": "maoken-fengyasong",
+      "status": "not-requested"
+    }
+  ]
+}

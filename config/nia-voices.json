@@ -1,0 +1,50 @@
+{
+  "provider": "NIA",
+  "model": "SenseNova-V7.0-omni",
+  "language": "ZH_CN",
+  "speech_rate": 1,
+  "voices": {
+    "narrator_host": {
+      "role": "旁白／主持人",
+      "name": "晚舟",
+      "voice_id": "male_ruyayichen_hs2",
+      "direction": "低沉、沉稳、克制，普通话清楚，正常语速，不拖长句首。主持人提问更直接。"
+    },
+    "xu": {
+      "role": "许知音",
+      "name": "小程",
+      "voice_id": "female_santongyongns_hs2",
+      "direction": "自然、平实、清晰的成年女声。用日常说话的方式解释录音，克制停顿，避免甜腻、撒娇或客服播报感。"
+    },
+    "liang": {
+      "role": "梁素琴",
+      "name": "暖暖",
+      "voice_id": "female_jitangnv_hs2",
+      "direction": "温和、生活化，像招呼熟人。成熟疲惫的表演感仍需试听调整；如烟虽列在文档，但本账户接口拒绝。"
+    },
+    "shen": {
+      "role": "沈时安",
+      "name": "云峥",
+      "voice_id": "male_lingfeiyixf",
+      "direction": "平稳、理性，语速均匀，先澄清事实。"
+    },
+    "zhou": {
+      "role": "周叙",
+      "name": "林舟",
+      "voice_id": "male_wennuanahu",
+      "direction": "明朗、自然、清晰，解释缺失影像时不刻意心虚；星野虽列在文档，但本账户接口拒绝。"
+    },
+    "cheng": {
+      "role": "程野",
+      "name": "青木",
+      "voice_id": "male_dayi_hs2",
+      "direction": "中年男声，稳重、可靠、直接，重视物证与结论边界。"
+    },
+    "tang": {
+      "role": "唐棠",
+      "name": "青禾",
+      "voice_id": "female_linjianvhai",
+      "direction": "轻柔、温暖、略有迟疑，提到孩子时情绪轻微变化。"
+    }
+  }
+}

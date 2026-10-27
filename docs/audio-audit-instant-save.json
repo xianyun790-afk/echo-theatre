@@ -1,0 +1,22 @@
+{
+  "during": [
+    {
+      "paused": false,
+      "src": "/audio/background-music.mp3",
+      "state": null,
+      "time": 1.268929
+    },
+    {
+      "paused": false,
+      "src": "/api/tts/n17-act-one-end",
+      "state": "playing",
+      "time": 0.680556
+    }
+  ],
+  "closed": [
+    {
+      "paused": false,
+      "src": "/audio/background-music.mp3"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "actualHeight": 900,
+    "actualWidth": 1440,
+    "dialogWidth": 720,
+    "fontReady": "true",
+    "headingSize": "28px",
+    "horizontalOverflow": false,
+    "titleFits": true
+  },
+  {
+    "actualHeight": 768,
+    "actualWidth": 1024,
+    "dialogWidth": 720,
+    "fontReady": "true",
+    "headingSize": "28px",
+    "horizontalOverflow": false,
+    "titleFits": true
+  },
+  {
+    "actualHeight": 844,
+    "actualWidth": 390,
+    "dialogWidth": 366,
+    "fontReady": "true",
+    "headingSize": "24px",
+    "horizontalOverflow": false,
+    "titleFits": true
+  }
+]

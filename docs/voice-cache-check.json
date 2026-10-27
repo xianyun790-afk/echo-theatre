@@ -1,0 +1,236 @@
+[
+  {
+    "clip": "n01-return",
+    "ok": true,
+    "bytes": 154697,
+    "cached": false
+  },
+  {
+    "clip": "n02-dining-room",
+    "ok": true,
+    "bytes": 134537,
+    "cached": false
+  },
+  {
+    "clip": "n03-radio-focus",
+    "ok": true,
+    "bytes": 39497,
+    "cached": false
+  },
+  {
+    "clip": "n04-song-ended",
+    "ok": true,
+    "bytes": 144329,
+    "cached": false
+  },
+  {
+    "clip": "n05-rain-window",
+    "ok": true,
+    "bytes": 144329,
+    "cached": false
+  },
+  {
+    "clip": "n06-old-cabinet",
+    "ok": true,
+    "bytes": 129353,
+    "cached": false
+  },
+  {
+    "clip": "n07-under-table",
+    "ok": true,
+    "bytes": 152393,
+    "cached": false
+  },
+  {
+    "clip": "n08-handprint",
+    "ok": true,
+    "bytes": 167369,
+    "cached": false
+  },
+  {
+    "clip": "n09-evidence-recorded",
+    "ok": true,
+    "bytes": 103433,
+    "cached": false
+  },
+  {
+    "clip": "n10-ask-xu",
+    "ok": true,
+    "bytes": 131657,
+    "cached": false
+  },
+  {
+    "clip": "n11-tape-received",
+    "ok": true,
+    "bytes": 154697,
+    "cached": false
+  },
+  {
+    "clip": "n12-ready-to-gather",
+    "ok": true,
+    "bytes": 165065,
+    "cached": false
+  },
+  {
+    "clip": "n13-at-the-table",
+    "ok": true,
+    "bytes": 142025,
+    "cached": false
+  },
+  {
+    "clip": "n14-statements-begin",
+    "ok": true,
+    "bytes": 149513,
+    "cached": false
+  },
+  {
+    "clip": "n15-questions-begin",
+    "ok": true,
+    "bytes": 134537,
+    "cached": false
+  },
+  {
+    "clip": "n16-judgment-begin",
+    "ok": true,
+    "bytes": 170249,
+    "cached": false
+  },
+  {
+    "clip": "n17-act-one-end",
+    "ok": true,
+    "bytes": 142025,
+    "cached": false
+  },
+  {
+    "clip": "replay",
+    "ok": true,
+    "bytes": 88457,
+    "cached": false
+  },
+  {
+    "clip": "stool",
+    "ok": true,
+    "bytes": 62537,
+    "cached": false
+  },
+  {
+    "clip": "stool-known",
+    "ok": true,
+    "bytes": 90761,
+    "cached": false
+  },
+  {
+    "clip": "numbers",
+    "ok": true,
+    "bytes": 118985,
+    "cached": false
+  },
+  {
+    "clip": "hint-stool",
+    "ok": true,
+    "bytes": 93065,
+    "cached": false
+  },
+  {
+    "clip": "hint-tape",
+    "ok": true,
+    "bytes": 121289,
+    "cached": false
+  },
+  {
+    "clip": "fallback",
+    "ok": true,
+    "bytes": 88457,
+    "cached": false
+  },
+  {
+    "clip": "boundary",
+    "ok": true,
+    "bytes": 106313,
+    "cached": false
+  },
+  {
+    "clip": "council-received",
+    "ok": true,
+    "bytes": 62537,
+    "cached": false
+  },
+  {
+    "clip": "council-boundary",
+    "ok": true,
+    "bytes": 129353,
+    "cached": false
+  },
+  {
+    "clip": "tape",
+    "ok": true,
+    "bytes": 136841,
+    "cached": true
+  },
+  {
+    "clip": "liang",
+    "ok": true,
+    "bytes": 123017,
+    "cached": true
+  },
+  {
+    "clip": "council-xu",
+    "ok": true,
+    "bytes": 129353,
+    "cached": true
+  },
+  {
+    "clip": "council-shen",
+    "ok": true,
+    "bytes": 139721,
+    "cached": true
+  },
+  {
+    "clip": "council-zhou",
+    "ok": true,
+    "bytes": 132809,
+    "cached": true
+  },
+  {
+    "clip": "council-cheng",
+    "ok": true,
+    "bytes": 139145,
+    "cached": true
+  },
+  {
+    "clip": "council-tang",
+    "ok": true,
+    "bytes": 157001,
+    "cached": true
+  },
+  {
+    "clip": "council-question-print",
+    "ok": true,
+    "bytes": 131657,
+    "cached": true
+  },
+  {
+    "clip": "council-question-tape",
+    "ok": true,
+    "cached": true,
+    "fallback": true,
+    "bytes": 161609,
+    "note": "Account frozen; identical text and voice from earlier prosody cache."
+  },
+  {
+    "clip": "council-question-numbers",
+    "ok": true,
+    "cached": true,
+    "fallback": true,
+    "bytes": 134537,
+    "note": "Account frozen; identical text and voice from earlier prosody cache."
+  },
+  {
+    "clip": "council-question-open",
+    "ok": true,
+    "cached": true,
+    "fallback": true,
+    "bytes": 161609,
+    "note": "Account frozen; identical text and voice from earlier prosody cache."
+  }
+]

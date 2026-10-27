@@ -1,0 +1,45 @@
+{
+  "reply": [
+    {
+      "paused": false,
+      "src": "/audio/background-music.mp3",
+      "time": 2.301637
+    },
+    {
+      "paused": false,
+      "src": "/api/tts/tape",
+      "time": 0.925135
+    }
+  ],
+  "tape": [
+    {
+      "paused": false,
+      "src": "/audio/background-music.mp3",
+      "time": 11.465683
+    },
+    {
+      "paused": false,
+      "src": "/api/tts/n11-tape-received",
+      "time": 1.045303
+    }
+  ],
+  "gather": [
+    {
+      "paused": false,
+      "src": "/audio/background-music.mp3",
+      "time": 23.601227
+    },
+    {
+      "paused": false,
+      "src": "/api/tts/n12-ready-to-gather",
+      "time": 1.092023
+    }
+  ],
+  "reset": [
+    {
+      "paused": false,
+      "src": "/audio/opening-song.mp3",
+      "time": 1.022564
+    }
+  ]
+}

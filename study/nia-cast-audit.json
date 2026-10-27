@@ -1,0 +1,471 @@
+{
+  "clips": [
+    {
+      "clip": "n01-return",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 10.35,
+      "peak_dbfs": -3.28,
+      "valid": true
+    },
+    {
+      "clip": "n02-dining-room",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 10.85,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "n03-radio-focus",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 10.75,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "n04-song-ended",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 13.75,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "n05-rain-window",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 11.4,
+      "peak_dbfs": -3.54,
+      "valid": true
+    },
+    {
+      "clip": "n06-old-cabinet",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 10.75,
+      "peak_dbfs": -3.27,
+      "valid": true
+    },
+    {
+      "clip": "n07-under-table",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 11.15,
+      "peak_dbfs": -3.83,
+      "valid": true
+    },
+    {
+      "clip": "n08-handprint",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 11.95,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "n09-evidence-recorded",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 8.6,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "n10-ask-xu",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 12.85,
+      "peak_dbfs": -3.21,
+      "valid": true
+    },
+    {
+      "clip": "n11-tape-received",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 11.65,
+      "peak_dbfs": -3.4,
+      "valid": true
+    },
+    {
+      "clip": "n12-ready-to-gather",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 12.55,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "n13-at-the-table",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 13.7,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "n14-statements-begin",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 11.55,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "n15-questions-begin",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 10.4,
+      "peak_dbfs": -3.5,
+      "valid": true
+    },
+    {
+      "clip": "n16-judgment-begin",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 15.0,
+      "peak_dbfs": -4.7,
+      "valid": true
+    },
+    {
+      "clip": "n17-act-one-end",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 11.6,
+      "peak_dbfs": -3.41,
+      "valid": true
+    },
+    {
+      "clip": "replay",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 7.8,
+      "peak_dbfs": -4.68,
+      "valid": true
+    },
+    {
+      "clip": "stool",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 5.85,
+      "peak_dbfs": -4.18,
+      "valid": true
+    },
+    {
+      "clip": "stool-known",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 6.8,
+      "peak_dbfs": -3.66,
+      "valid": true
+    },
+    {
+      "clip": "numbers",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 8.6,
+      "peak_dbfs": -4.71,
+      "valid": true
+    },
+    {
+      "clip": "hint-stool",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 5.75,
+      "peak_dbfs": -4.01,
+      "valid": true
+    },
+    {
+      "clip": "hint-tape",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 7.75,
+      "peak_dbfs": -3.74,
+      "valid": true
+    },
+    {
+      "clip": "fallback",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 6.2,
+      "peak_dbfs": -4.89,
+      "valid": true
+    },
+    {
+      "clip": "boundary",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 7.8,
+      "peak_dbfs": -3.71,
+      "valid": true
+    },
+    {
+      "clip": "council-received",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 4.55,
+      "peak_dbfs": -4.73,
+      "valid": true
+    },
+    {
+      "clip": "council-boundary",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 7.6,
+      "peak_dbfs": -3.5,
+      "valid": true
+    },
+    {
+      "clip": "tape",
+      "role": "xu",
+      "voice_id": "female_mizai_hs2",
+      "seconds": 7.6,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "liang",
+      "role": "liang",
+      "voice_id": "female_jitangnv_hs2",
+      "seconds": 7.55,
+      "peak_dbfs": -4.47,
+      "valid": true
+    },
+    {
+      "clip": "council-xu",
+      "role": "xu",
+      "voice_id": "female_mizai_hs2",
+      "seconds": 6.0,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-shen",
+      "role": "shen",
+      "voice_id": "male_lingfeiyixf",
+      "seconds": 9.8,
+      "peak_dbfs": -4.08,
+      "valid": true
+    },
+    {
+      "clip": "council-zhou",
+      "role": "zhou",
+      "voice_id": "male_wennuanahu",
+      "seconds": 9.4,
+      "peak_dbfs": -6.15,
+      "valid": true
+    },
+    {
+      "clip": "council-cheng",
+      "role": "cheng",
+      "voice_id": "male_dayi_hs2",
+      "seconds": 9.0,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-tang",
+      "role": "tang",
+      "voice_id": "female_linjianvhai",
+      "seconds": 11.55,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-question-print",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 9.2,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-question-print",
+      "role": "xu",
+      "voice_id": "female_mizai_hs2",
+      "seconds": 8.0,
+      "peak_dbfs": -5.02,
+      "valid": true
+    },
+    {
+      "clip": "council-question-print",
+      "role": "shen",
+      "voice_id": "male_lingfeiyixf",
+      "seconds": 10.0,
+      "peak_dbfs": -4.54,
+      "valid": true
+    },
+    {
+      "clip": "council-question-print",
+      "role": "zhou",
+      "voice_id": "male_wennuanahu",
+      "seconds": 9.4,
+      "peak_dbfs": -5.7,
+      "valid": true
+    },
+    {
+      "clip": "council-question-print",
+      "role": "cheng",
+      "voice_id": "male_dayi_hs2",
+      "seconds": 8.55,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-question-print",
+      "role": "tang",
+      "voice_id": "female_linjianvhai",
+      "seconds": 12.2,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-question-tape",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 10.0,
+      "peak_dbfs": -3.73,
+      "valid": true
+    },
+    {
+      "clip": "council-question-tape",
+      "role": "xu",
+      "voice_id": "female_mizai_hs2",
+      "seconds": 9.05,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-question-tape",
+      "role": "shen",
+      "voice_id": "male_lingfeiyixf",
+      "seconds": 10.25,
+      "peak_dbfs": -4.99,
+      "valid": true
+    },
+    {
+      "clip": "council-question-tape",
+      "role": "zhou",
+      "voice_id": "male_wennuanahu",
+      "seconds": 9.85,
+      "peak_dbfs": -5.68,
+      "valid": true
+    },
+    {
+      "clip": "council-question-tape",
+      "role": "cheng",
+      "voice_id": "male_dayi_hs2",
+      "seconds": 8.8,
+      "peak_dbfs": -3.37,
+      "valid": true
+    },
+    {
+      "clip": "council-question-tape",
+      "role": "tang",
+      "voice_id": "female_linjianvhai",
+      "seconds": 12.75,
+      "peak_dbfs": -3.65,
+      "valid": true
+    },
+    {
+      "clip": "council-question-numbers",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 8.2,
+      "peak_dbfs": -4.42,
+      "valid": true
+    },
+    {
+      "clip": "council-question-numbers",
+      "role": "xu",
+      "voice_id": "female_mizai_hs2",
+      "seconds": 7.2,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-question-numbers",
+      "role": "shen",
+      "voice_id": "male_lingfeiyixf",
+      "seconds": 9.85,
+      "peak_dbfs": -4.62,
+      "valid": true
+    },
+    {
+      "clip": "council-question-numbers",
+      "role": "zhou",
+      "voice_id": "male_wennuanahu",
+      "seconds": 9.45,
+      "peak_dbfs": -6.68,
+      "valid": true
+    },
+    {
+      "clip": "council-question-numbers",
+      "role": "cheng",
+      "voice_id": "male_dayi_hs2",
+      "seconds": 8.45,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-question-numbers",
+      "role": "tang",
+      "voice_id": "female_linjianvhai",
+      "seconds": 10.35,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-question-open",
+      "role": "narrator_host",
+      "voice_id": "male_ruyayichen_hs2",
+      "seconds": 10.35,
+      "peak_dbfs": -3.69,
+      "valid": true
+    },
+    {
+      "clip": "council-question-open",
+      "role": "xu",
+      "voice_id": "female_mizai_hs2",
+      "seconds": 9.8,
+      "peak_dbfs": -4.1,
+      "valid": true
+    },
+    {
+      "clip": "council-question-open",
+      "role": "shen",
+      "voice_id": "male_lingfeiyixf",
+      "seconds": 12.6,
+      "peak_dbfs": -4.18,
+      "valid": true
+    },
+    {
+      "clip": "council-question-open",
+      "role": "zhou",
+      "voice_id": "male_wennuanahu",
+      "seconds": 12.1,
+      "peak_dbfs": -5.8,
+      "valid": true
+    },
+    {
+      "clip": "council-question-open",
+      "role": "cheng",
+      "voice_id": "male_dayi_hs2",
+      "seconds": 11.8,
+      "peak_dbfs": -3.0,
+      "valid": true
+    },
+    {
+      "clip": "council-question-open",
+      "role": "tang",
+      "voice_id": "female_linjianvhai",
+      "seconds": 14.75,
+      "peak_dbfs": -3.0,
+      "valid": true
+    }
+  ],
+  "count": 58,
+  "live_host_voice": "晚舟",
+  "complete": true
+}
