@@ -1,5 +1,15 @@
 # 第七个孩子 · 第一、二幕本地试玩
 
+## ⬇️ [点击下载完整部署包 · 0.2.8](https://github.com/xianyun790-afk/echo-theatre/releases/download/v0.2.8/echo-theatre-0.2.8-full-deploy.zip)
+
+**发给部署人员，请直接下载上面的 ZIP（约 102 MB）。包含第一、二幕源码、中文语音识别模型、82条配音和部署说明。**
+
+解压后先阅读《部署交接说明.md》，实时主持人的服务密钥需另行配置。
+
+[查看部署说明](docs/DEPLOYMENT.md) · [查看版本与全部附件](https://github.com/xianyun790-afk/echo-theatre/releases/tag/v0.2.8)
+
+---
+
 本地可交互三维试玩，未发布。基于原创《第七个孩子》的第一、二幕，风格调整为哥特暗黑童话：手绘材质、旧物、冷灰蓝与暖黄灯光。无人物立绘，主要焦点是旧广播与物证。Three.js实时渲染房间、门、广播、桌椅、手印；场景不是背景图片。
 
 ## 仓库交接与部署
