@@ -1,0 +1,41 @@
+/* Keep the door visible while giving first-time players a short story to enter. */
+.entry-copy{top:17%;max-width:350px}
+.entry-copy h1{font-size:38px;line-height:1.55;margin:16px 0 22px}
+.act-one-prologue .prologue-label{display:block;font-size:10px;letter-spacing:3px;color:#c7b990;margin-bottom:12px}
+.act-one-prologue p{font-size:13px;line-height:1.95;letter-spacing:.7px;margin:0 0 12px}
+.entry-copy .act-one-prologue{padding-left:15px;border-left:1px solid #c7b99066;text-shadow:0 2px 8px #061017}
+.entry-action{gap:14px;bottom:102px}
+.entry-objective{font-size:14px;letter-spacing:1px}
+.entry-scope{font-size:10px;line-height:1.6;letter-spacing:.8px;color:#a6b3a5}
+.entry-action .council-demo-entry{font-size:10px}
+.panel .act-one-prologue .prologue-label{color:#73735b}
+.panel .act-one-prologue p{font-family:var(--type-reading);font-size:16px;line-height:2;color:#424a40;margin-bottom:18px}
+.panel-footer{flex-shrink:0;border-top:1px solid #8e876b44;padding:16px 34px 10px;background:#ded6c2}
+.panel-footer .panel-primary{margin:0;width:100%;justify-content:center;min-height:44px}
+.panel-footer .intro-return{margin:12px auto 0;min-height:24px;justify-content:center}
+.panel[data-panel-kind="your-role-act-i"] .panel-header{padding-top:22px;padding-bottom:18px}
+.panel[data-panel-kind="your-role-act-i"] h2{font-size:25px;margin-top:10px}
+.panel[data-panel-kind="your-role-act-i"] .panel-body{padding-top:18px;padding-bottom:18px}
+.panel[data-panel-kind="your-role-act-i"] .role-description{margin-bottom:14px}
+.panel[data-panel-kind="your-role-act-i"] .reading-text{font-size:14px;line-height:1.9}
+.panel[data-panel-kind="your-role-act-i"] .paper-letter{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0;padding:10px 16px;transform:none}
+.panel[data-panel-kind="your-role-act-i"] .paper-letter p{font-size:22px;margin:0}
+.panel[data-panel-kind="your-role-act-i"] .note-box{margin-top:14px;padding:10px 14px}
+.panel[data-panel-kind="your-role-act-i"] .reading-heading{margin:14px 0 8px;font-size:16px}
+.panel[data-panel-kind="your-role-act-i"] .small-print{margin-top:14px}
+.panel[data-panel-kind="your-role-act-i"] .panel-body:focus-visible{outline:1px solid #94835788;outline-offset:-2px}
+.is-reading-role>.dialogue-region,.is-reading-role>.reveal-points,.is-reading-role>.scene-object-label,.is-reading-role>.chapter-intro,.is-reading-role .bottom-bar nav,.is-reading-role .stage-progress{display:none}
+@media(min-width:651px) and (max-height:650px){
+ .entry-copy{top:105px;max-width:320px}.entry-copy h1{font-size:29px;margin:10px 0 14px}.entry-copy .act-one-prologue p{font-size:12px;margin-bottom:8px}.entry-action{left:65%;bottom:105px}
+}
+@media(max-width:650px){
+ .entry-screen{top:112px;bottom:78px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;overflow-y:auto;overscroll-behavior:contain;pointer-events:auto;padding:8px 24px 12px;scrollbar-width:thin}
+ .entry-copy{position:static;max-width:100%;flex-shrink:0}
+ .entry-copy h1{font-size:29px;line-height:1.45;letter-spacing:4px;margin:12px 0 18px}
+ .entry-copy .act-one-prologue p{font-size:12px;line-height:1.9;margin-bottom:10px}
+ .entry-action{position:static;transform:none;width:100%;max-width:100%;gap:12px;flex-shrink:0}
+ .entry-objective{font-size:12px;letter-spacing:.5px}
+ .entry-action .primary-action{font-size:12px;width:100%;min-width:0;max-width:330px}
+ .entry-action .action-hint,.entry-scope{font-size:9px}
+ .panel-footer{padding:12px 22px 8px}
+}

@@ -1,6 +1,7 @@
 import {PcmMicrophone,PcmStreamPlayer,pcmBase64,type StreamAudio,type StreamMicrophone} from './stream-audio';
+import {requestsTableInspection} from './act-one';
 export type NiaState='idle'|'connecting'|'listening'|'thinking'|'speaking';
-export type NiaAction='inspect_under_table'|'ask_xu_about_tape';
+export type NiaAction='inspect_under_table'|'ask_xu_about_tape'|'inspect_duty_room'|'inspect_seventh_door'|'review_act_two_timeline';
 type Message=Record<string,unknown>&{type:string};
 type HistoryLine={who:string;text:string};
 type Callbacks={onState:(state:NiaState)=>void;onLevel:(level:number)=>void;onUser:(text:string)=>void;onPartial?:(text:string)=>void;onReply:(text:string,complete:boolean)=>void;onError:(message:string)=>void;onAudioReceived?:(bytes:number)=>void;onAction:(action:NiaAction)=>Record<string,unknown>};
@@ -16,13 +17,15 @@ export class NiaSession {
  private transcript='';private responseIndex:unknown=null;private audioIndex:unknown=null;
  private known:string[]=[];private history:HistoryLine[]=[];private asrTraces=new Set<string>();
  private audioBytes=0;private responseStarted=false;
+ private act:1|2=1;
  private audio:StreamAudio;private capture:StreamMicrophone;
  constructor(private callbacks:Callbacks,dependencies?:{audio?:StreamAudio;microphone?:StreamMicrophone}){
   this.audio=dependencies?.audio??new PcmStreamPlayer();this.capture=dependencies?.microphone??new PcmMicrophone();
  }
+ setAct(act:1|2){if(this.act!==act){this.stop();this.act=act;}}
  setKnown(known:string[]){
   if(JSON.stringify(this.known)===JSON.stringify(known))return;
-  this.known=[...known];if(this.ready)this.send({type:'GameContext',known,history:this.history,update:true,request_id:crypto.randomUUID()});
+  this.known=[...known];if(this.ready)this.send({type:'GameContext',act:this.act,known,history:this.history});
  }
  setHistory(history:HistoryLine[]){this.history=history.filter(m=>m.who==='你 · 林见秋'||m.who.startsWith('主持人')).slice(-8).map(m=>({who:m.who,text:m.text.slice(0,300)}));}
  setMuted(muted:boolean){this.audio.setMuted(muted);}
@@ -40,10 +43,13 @@ export class NiaSession {
  }
  private clearReplyDeadline(){if(this.replyTimer)clearTimeout(this.replyTimer);this.replyTimer=null;}
  private expectReply(){
-  this.clearReplyDeadline();this.responseStarted=false;
-  this.replyTimer=setTimeout(()=>this.fail('主持人暂时没有回应，请重试，也可以切换本地试玩。'),25000);
+  this.responseStarted=false;this.armReplyDeadline();
  }
- private progress(){this.clearReplyDeadline();}
+ private armReplyDeadline(){
+  this.clearReplyDeadline();
+  this.replyTimer=setTimeout(()=>this.fail(this.responseStarted?'主持人的语音回复中断，请重试，也可以切换本地试玩。':'主持人暂时没有回应，请重试，也可以切换本地试玩。'),25000);
+ }
+ private progress(){if(this.replyTimer!==null)this.armReplyDeadline();}
  private receive(message:Message){
   for(const [id,p] of this.pending){
    if(p.types.includes(message.type)&&(id.startsWith('event:')||id===message.respond_to)){
@@ -59,7 +65,7 @@ export class NiaSession {
     else if(message.level==='error'||Number(message.code)>=400)this.fail('NIA 服务拒绝了请求，请检查模型权限或重新连接。');break;
    case 'ResponseBlocked':this.fail('这次回复未能生成，请换一种问法。');break;
    case 'CloseConnection':this.fail('实时语音连接已结束，请重新连接。');break;
-   case 'StartSpeaking':this.interrupt();this.callbacks.onPartial?.('');this.state('listening');break;
+   case 'StartSpeaking':this.interrupt();this.send({type:'GameContext',act:this.act,known:this.known,history:this.history,update:true,request_id:crypto.randomUUID()});this.callbacks.onPartial?.('');this.state('listening');break;
    case 'StopSpeaking':this.state('thinking');this.expectReply();break;
    case 'AsrTraceStart':this.callbacks.onPartial?.('');break;
    case 'AsrTraceUpdate':if(typeof message.result==='string')this.callbacks.onPartial?.(message.result.trim());break;
@@ -69,7 +75,9 @@ export class NiaSession {
     if(trace&&this.asrTraces.has(trace))break;
     if(typeof message.result==='string'&&message.result.trim()){
      if(trace){this.asrTraces.add(trace);if(this.asrTraces.size>100)this.asrTraces.delete(this.asrTraces.values().next().value!);}
-     const token=this.generation;this.callbacks.onUser(message.result.trim());
+     const token=this.generation;this.inspectIfRequested(message.result.trim());
+     if(token!==this.generation)break;
+     this.callbacks.onUser(message.result.trim());
      if(token===this.generation){this.state('thinking');this.expectReply();}
     }break;
    }
@@ -93,7 +101,7 @@ export class NiaSession {
    case 'AgentStartPlay':this.progress();this.responseStarted=true;this.state('speaking');break;
    case 'AgentEndPlay':{
     if(!this.responseStarted)break;
-    this.progress();const token=this.generation,turn=this.turn;
+    this.clearReplyDeadline();this.responseStarted=false;const token=this.generation,turn=this.turn;
     void this.audio.drain().then(()=>{
      if(token!==this.generation||turn!==this.turn)return;
      this.state(this.microphone?'listening':'idle');
@@ -104,8 +112,9 @@ export class NiaSession {
    case 'CallFn':{
     this.progress();if(typeof message.call_id!=='string')return;
     const token=this.generation;
-    if(message.name==='inspect_under_table'||message.name==='ask_xu_about_tape'){
-     const result=this.callbacks.onAction(message.name);
+    const allowed=this.act===2?['inspect_duty_room','inspect_seventh_door','review_act_two_timeline']:['inspect_under_table','ask_xu_about_tape'];
+    if(typeof message.name==='string'&&allowed.includes(message.name)){
+     const result=this.callbacks.onAction(message.name as NiaAction);
      if(token===this.generation)this.send({type:'FnReturn',call_id:message.call_id,status:'Success',result});
     }else this.send({type:'FnReturn',call_id:message.call_id,status:'NoSuchFn',result:{}});
     break;
@@ -113,6 +122,9 @@ export class NiaSession {
   }
  }
  private fail(message:string){this.stop();this.callbacks.onError(message);}
+ private inspectIfRequested(text:string){
+  if(this.act===1&&requestsTableInspection(text))this.callbacks.onAction('inspect_under_table');
+ }
  async connect(){
   if(this.idleTimer)clearTimeout(this.idleTimer);this.idleTimer=null;
   if(this.ready)return;if(this.connecting)return this.connecting;
@@ -134,7 +146,7 @@ export class NiaSession {
    socket.addEventListener('error',()=>{if(current())this.fail('无法连接实时语音服务，请检查网络后重试。');});
    socket.addEventListener('close',()=>{if(current())this.fail('实时语音连接已断开，请重新连接。');});
    await this.wait(['TransportReady']);if(!current())return;
-   this.send({type:'GameContext',known:this.known,history:this.history});
+   this.send({type:'GameContext',act:this.act,known:this.known,history:this.history});
    await this.request('CreateSession',['CreateSessionResult']);if(!current())return;
    await this.request('ConfigPipeline',['ConfigUpdated','ConfigRejected']);if(!current())return;
    this.send({type:'ConfigASR',enable:true});
@@ -154,19 +166,20 @@ export class NiaSession {
    await this.capture.start(bytes=>{
     if(token!==this.generation||!this.ready)return;
     if((this.socket?.bufferedAmount??0)>256000){this.fail('网络发送较慢，已暂停麦克风。请重试或输入问题。');return;}
-    this.send({type:'InputBuffer',audio_segment:pcmBase64(bytes)});
+    try{this.send({type:'InputBuffer',audio_segment:pcmBase64(bytes)});}catch{this.fail('语音连接已断开，请重新连接。');}
    },level=>{if(token===this.generation)this.callbacks.onLevel(level);});
    if(token!==this.generation)return;this.state('listening');
-  }catch(error){if(token===this.generation){this.stop();throw error;}}
+  }catch(error){if(token===this.generation)this.stop();throw error;}
  }
  async sendText(text:string){
   text=text.trim().slice(0,300);if(!text)return;const token=this.generation;
   try{
    await this.audio.open();if(token!==this.generation)return;
    await this.connect();if(token!==this.generation||!this.ready)return;
-   this.interrupt();this.state('thinking');this.expectReply();
+   this.interrupt();this.inspectIfRequested(text);if(token!==this.generation)return;
+   this.send({type:'GameContext',act:this.act,known:this.known,history:this.history,update:true,request_id:crypto.randomUUID()});this.state('thinking');this.expectReply();
    this.send({type:'PostMultimodalGenerate',text,request_id:crypto.randomUUID()});
-  }catch(error){if(token===this.generation){this.stop();throw error;}}
+  }catch(error){if(token===this.generation)this.stop();throw error;}
  }
  interrupt(){
   this.turn++;this.clearReplyDeadline();this.audio.clear();this.transcript='';this.responseIndex=null;this.audioIndex=null;this.responseStarted=false;

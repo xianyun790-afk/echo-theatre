@@ -46,3 +46,12 @@ class NiaCacheTests(unittest.TestCase):
                 m.synthesize(clip, 'shen')
 
 if __name__ == '__main__': unittest.main()
+
+class ActTwoCatalogTests(unittest.TestCase):
+    def test_status_counts_the_expanded_catalog_without_a_fixed_58_gate(self):
+        with patch.object(m, 'entry_for', side_effect=m.TTSError('not cached')):
+            status = m.status()
+        self.assertEqual(status['total_clips'], 82)
+        self.assertEqual(status['cached_clips'], 0)
+        self.assertFalse(status['configured'])
+        self.assertEqual(sum(clip.startswith('a2-') for clip in m.SCRIPTS), 24)

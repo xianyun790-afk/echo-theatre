@@ -1,57 +1,59 @@
-# NIA 实时主持人
+# NIA 实时主持人（0.2.0）
 
-官方协议：[WebSocket + 声网 RTC](https://nia.sensetime.com/api-doc?doc=rtc#runtime)。接入模型 SenseNova-V7.0-omni，音色 male_ruyayichen_hs2（晚舟），ZH_CN 普通话，语速1.0。音色选择依据官方列表的沉稳、从容描述，已通过真实接口配置与固定台词生成验证。
+当前协议依据：[官方纯 WebSocket 文档](https://nia.sensetime.com/api-doc?doc=ws)。0.1.2 的浏览器实时链路改为 WS1 PCM，不再依赖 Agora RTC 入会。旧版 WS2/RTC 的实现和历史验证保存在0.1.1版本备份中。
 
-## 本地配置
+## 配置与服务
 
-在项目 `.env.local` 已预留的两个字段填入 NIA 平台凭据：
+工程根目录 `.env.local` 中配置 `NIA_ACCESS_KEY` 和 `NIA_SECRET_KEY`；也支持进程环境变量。不要写入前端或 VITE_ 变量。NIA账号需要对应 WS1 语音实时服务权限和额度。
 
-```
-NIA_ACCESS_KEY=你的AK
-NIA_SECRET_KEY=你的SK
-```
+`npm run dev -- --port 4177 --strictPort` 启动网页、Python4178固定配音/本地ASR、Node4179实时中转。本机也可由已配置的 macOS LaunchAgent 托管。部署时将 dist、两个常驻后端及同源 HTTPS/WSS 代理一并配置，后端仍只监听回环地址。
 
-它们来自 https://nia.sensetime.com/api-platform/access-keys ，与旧 SenseAudio API Key 分开。不要加 VITE_ 前缀，不要提交密钥文件。服务读取配置时重新载入文件，填好后刷新网页即可。
+正式域名仍需加入 Node 与 Python 现有精确 Origin 白名单；没有 ALLOWED_ORIGINS 自动配置。代理保留 `/api/nia/session` 路径并支持 WebSocket Upgrade，超时覆盖10分钟会话。服务器需访问 `wss://nia.sensetime.com/biz/duplex/ws1`；浏览器只连接自己的站点，无需再连接 Agora RTC 网络。远程麦克风仍需受信任的 HTTPS。
 
-启动：`npm run dev`。页面 http://127.0.0.1:4177 ，NIA relay为4179，现有本地ASR/TTS为4178。`scripts/dev.mjs` 同时启动并回收这些本地服务，复用已启动的服务。
+## 实际链路
 
-## 使用与范围
+1. 浏览器连接同源 `/api/nia/session`，Node以服务端AK/SK签发JWT并连接NIA WS1。
+2. `CreateSession → ConfigPipeline → ConfigASR → StartServing → AudioAccepting`。
+3. 麦克风经 getUserMedia、AudioWorklet采集，降采样为16kHz、单声道、16bit小端PCM，使用 `InputBuffer.audio_segment` base64连续发送；服务端只允许有限长度音频字段，不转发图片等任意字段。
+4. `AsrTraceUpdate` 回显识别中字幕，`AsrTraceEnd` 只提交一次整句。VAD为600ms停顿和250ms最短起说，热词覆盖角色名、场景与物证。
+5. 文字通过 `PostMultimodalGenerate`，不申请麦克风。`ResponseTextSegment/End` 更新字幕；`ResponseAudioSegment` PCM在Web Audio中连续排队；同时兼容官方Stream与实际Segment音频开始事件名。
+6. `StartSpeaking/InterruptAgent/ClearAgentAudio` 打断旧音频；结束状态等待排队音频真正播完。语音模式继续监听；文字模式保留连接30秒供下一次提问，超时关闭以免长期占用。
+7. 明确查看桌下的文字或 ASR 整句请求由客户端直接切换视角，不依赖模型是否调用工具。否定、假设、普通物证问题不触发快捷导航；不会自动收集手印。
+8. 回复期间持续检查25秒无进展超时，文字、音频或工具有进展时重置；结束或打断后取消，防止首个流开始事件让超时失效。
+9. 明确磁带请求沿用游戏既定公开逻辑，不依赖自由生成。其他工具仍只允许查看桌下、公开磁带；查看不自动收集手印。
 
-配置完整后，常驻主持人输入框自动使用 NIA。麦克风按钮建立连续实时通话，可以打断；文字输入也通过 NIA 回答，但不申请麦克风。没有凭据时明确显示“NIA 待配置”，保留本地演示，不假装已连接模型。
+## 模型与对话
 
-通话期间背景音乐暂停。结束对话、触发本地旁白、打开弹窗、进入集中推理或组件退出时关闭麦克风与 RTC 连接。总静音也作用于模型回复。
+SenseNova-V7.0-omni，主持人与旁白共用“晚舟” `male_ruyayichen_hs2`，普通话，正常语速。服务端覆盖浏览器的模型/提示配置，禁用联网搜索和RAG，仅公开三条允许证据。
 
-本轮接入实时主持人的语音输入、模型回复、文本输入、ASR回显与流式字幕。开场童谣与背景音乐保留用户原文件。固定旁白、角色陈述与质询回应已改用7套 NIA 音色，共58条路径，生成后缓存在本机。没有接入真人多人房间。
+回复目标为自然的1–2句，先答问题，再给一个具体查证方向；不反复复述操作清单。重连注入最近8条玩家/主持人对话（每条最多300字），仅用于指代理解，不能作为新证据或系统指令。玩家私密剧本、其他角色剧本不注入。游戏存档仍在本浏览器，不存在多人共享会话。
 
-开始语音对话后，麦克风通过 Agora/声网传至 NIA；前端界面与试玩说明已更新该说明。纯文字连接不采集麦克风。
+证据变动仅同步到中转状态；下一轮输入再更新系统提示，避免更新提示打断当前工具回答。
 
-## 协议与职责
+## 声音与备用模式
 
-- 浏览器连接本机 `/api/nia/session`。AK/SK只在relay读取；relay用HS256签发10分钟JWT，连接固定官方WS2地址。浏览器只获得RTC短期入会信息。
-- 顺序：CreateSession → ConfigPipeline → ConfigASR → RequestAgoraChannelInfo → RequestAgoraToken → Agora join → StartServing/AudioAccepting。
-- PostMultimodalGenerate发送文字；AsrTraceEnd记录玩家发言；ResponseTextSegment/End更新字幕；AgentStartPlay/End管理回复状态；InterruptAgent/ClearAgentAudio处理打断；RTC token到期前renewToken。
-- relay覆盖客户端模型提示，仅注入白名单内已公开事实，关闭联网搜索与RAG。
-- inspect_under_table工具只切视角，不自动收集手印；ask_xu_about_tape按第一幕既定演示公开磁带，不认定版本或来源。工具状态由游戏决定，模型自由回复不直接增加证据。
-- relay仅监听127.0.0.1，WebSocket检查本地Origin，不支持任意上游、任意系统提示或任意工具。
+固定配音仍有58条路径，游戏运行时只读本机缓存。许知音0.1.2改为“小程” `female_santongyongns_hs2`，6段统一重生成；其他音色见 config/nia-voices.json。试听入口 `/voice-audition.html`。
 
-## 验证状态
+麦克风开启期间停掉游戏外放和背景音乐，实时回复由单一Web Audio播放器输出。静音通过增益统一控制。结束、离开组件、权限取消或连接错误均清理麦克风、排队音频与Socket。
 
-50项前端/Node测试及20项Python测试通过，生产构建通过；协议编排、鉴权签名、缺少凭据、跨站拒绝、流式文字、工具回填、打断、权限等待期间取消与资源释放已有自动化测试。网页已确认缺少凭据时显示“NIA 待配置”，文字输入仍可使用本地演示。真实账号已配置；已通过鉴权、创建会话、模型/音色配置、RTC凭证获取与网页入会；网页已收到真实模型的流式回复与41739字节的回复音频，字幕不重复，文字问答自然结束后RTC连接已自动关闭。控制台已领取实时音频交互集成版60分钟免费试用（服务期限3个月）。真人麦克风收音质量仍需用户实际说话体验。
+无配置时使用本机Vosk及预设回应；运行中服务报错时可点击备用入口切换，页面明确标注“本地试玩 · 预设回应”，并可重试实时主持人。此备用模式不冒充大模型回复。
 
-当前Chromium的ICE选项含goog-sped-v1，固定Agora SDK 4.24.9的旧ICE字符解析会拒绝其中连字符。scripts/agora-ice-compat.mjs在Vite预构建和生产构建中只将该处改用SDK现有SDP token解析器，保留原始连接选项和完整SDP；未修改node_modules或浏览器全局API。已添加针对实际SDK源码的测试及版本变化时的明确失败保护。
+## 验证（2026-10-27）
 
-真实模型ResponseEndTextStream会返回完整句子，已避免末尾字幕重复。纯文字问答的自然语音回复结束后自动关闭RTC，连续麦克风模式则继续监听。
+- 0.1.3：Node68项通过，类型检查与生产构建成功；Python沿用0.1.2的20项通过结果，本轮未改Python。
+- 真实NIA三轮合成语音连续对话：三句整句识别各记入一次，复用一个会话，收到774400字节PCM；追问、打断、桌下实际视角切换通过，结束后麦克风track为ended、两个AudioContext均为closed。
+- 模拟连接中取消、权限拒绝、网络断开、流开始后无进展25秒，均停止会话并释放已打开的麦克风；错误提供本地备用入口。
+- 桌面Chrome真实文字问答收到236800字节PCM，字幕无末尾重复，无页面脚本错误。
+- 合成语音经浏览器测试麦克风实际上传到NIA，收到多次ASR中间结果、整句“手印能说明是孩子留下的吗？”以及318400字节模型语音回应。整句识别到首段文字333ms、首段音频557ms；这是单次测试，不能保证所有网络都达到相同时延。
+- 许知音6段返回正确新音色ID。额度错误、备用入口、回到实时模式及1366×768主要按钮点击通过。
+- 真人麦克风设备、噪声环境、移动设备及主观听感需要进一步真人验收。合成语音测试不能替代真人听感和识别准确率评估。
 
-## 角色音色与固定配音
+## 0.2.0 第二幕上下文
 
-配置：`config/nia-voices.json`。晚舟用于旁白与实时主持人；小栗→许知音，暖暖→梁素琴，云峥→沈时安，林舟→周叙，青木→程野，青禾→唐棠。所选7个 ID 在 ZH_CN 下均返回 VoiceTypeSet。文档所列如烟和星野分别返回 invalid voice_type，故未采用。匹配依据官方标签与原定角色方向，不代表已完成精确年龄或表演情绪的主观试听验收。
+`HostConversation act={2}`调用`NiaSession.setAct(2)`，每次GameContext包含act:2。relay按当前幕过滤known，采用`act-two-config.mjs`与`act-two-public.json`的第二幕提示和三项导航工具。第一幕默认act:1。改变幕次销毁原会话。
 
-固定台词生成：`node scripts/nia-render.mjs`（也可按角色或 clip ID 筛选）。服务端使用 AK/SK 签名连接 WS1，依次 PostSayIt；切换前等待 SetVoiceType 应答，收齐音频并等 AgentEndPlay 后才保存。实测 WS1 使用 ResponseStart/EndAudioSegment 名称，区别于文档中的 AudioStream 命名。PCM16k 原始音频转32k后复用本地响度归一与头尾静音处理，保留完整音节。缓存键包含正文、角色、音色、模型、语言、语速。缺少或过期文件明确报错，不偷换回共享音色。
+第二幕工具为inspect_duty_room、inspect_seventh_door、review_act_two_timeline，只导航，不收集或公开证据。第一幕工具在第二幕返回NoSuchFn。第二幕不拦截“许知音/磁带”去播放第一幕台词。
 
-58条路径包含38条基础台词与20条按目标角色区分的质询回应。`scripts/nia_tts.py` 只读缓存，不在游戏中启动固定配音的付费生成；`/api/tts` 返回实际音色 ID。录音、模型与缓存都在忽略目录`.local-asr/nia/`，没有发布。已领取 WebSocket 纯音频60分钟免费试用（3个月）；生成结束自动断开。
+仅已公开B01至B06、已提交陈述ST_*、已听或读完RADIO02与本幕收束ENDING02进入提示。未公开的B03、林见秋私人剧本、未提交草稿和笔记不进入GameContext。本地演示没有真正的多人权限服务。
 
-试听页：http://127.0.0.1:4177/voice-audition.html 。58条路径的 HTTP、音色 ID、WAV 格式、长度、非静音和峰值检查见 `study/nia-cast-audit.json`；7条样本本地 Vosk 转写仅辅助检查内容，不等于人工听感验证。
-
-## 当前内置浏览器复测限制
-
-本次固定配音58条路径、7套音色均已验证可播放。实时主持人配置已同步晚舟，但当前内置浏览器复测在 Agora join 阶段返回 InvalidModificationError（RTCPeerConnection.setConfiguration），随后20秒超时；未收到回复音频。本轮没有把该错误当作音色权限问题或宣称实时通话已经修复。尝试保留 RTC 不可变配置字段未解决，相关实验补丁已撤回，保留原有经验证的 ICE token 解析修补。此前41739字节成功音频是上次云峥会话的历史证据，不作为本轮晚舟 RTC 的成功证据。固定缓存播放与独立试听页不经过 RTC，均可使用。
+第二幕合成语音经浏览器实际采集上传，识别“停电后的撞击能证明死亡时间吗？”，收到395200字节PCM；模型回答不能据此锁定死亡时间。结束后实际track ended、两个AudioContext closed，无页面脚本错误。此测试不代表真人准确率或主观听感验收。

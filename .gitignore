@@ -12,3 +12,10 @@ __pycache__/
 .local-asr/
 
 !.env.example
+
+# Local credentials, environments, and deployment archives
+.venv/
+venv/
+*.pem
+*.key
+*.zip

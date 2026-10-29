@@ -32,7 +32,7 @@ test('speech keeps the subtitle lead-in but reaches full volume before the initi
  await advance(1);assert.equal(starts,1);assert.equal(speech.paused,false);assert.equal(speech.volume,1);
  await advance(16);assert.equal(speech.volume,1);
  await advance(4);assert.equal(speech.volume,1);
- assert.match(speech.src,/\/api\/tts\/stool\?v=nia-cast-v1-/);
+ assert.match(speech.src,/\/api\/tts\/stool\?v=nia-cast-v3-/);
  speech.currentTime=13;speech.dispatchEvent(new Event('timeupdate'));assert.equal(ratio,.5);
  speech.currentTime=25.98;speech.dispatchEvent(new Event('timeupdate'));assert.equal(speech.volume,1);
  await end(speech,done);assert.equal(speech.paused,true);assert.equal(document.elements.length,0);

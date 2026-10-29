@@ -20,7 +20,7 @@ export function startNiaServer(port=4179,{credentials=loadNiaCredentials,upstrea
   if(!ak||!sk){send({type:'LocalError',message:'NIA 尚未配置 AK/SK，请先完成本地服务端配置。'});client.close(1000);return;}
   const token=createNiaJwt(ak,sk);
   const upstream=upstreamFactory(token);
-  let known=[],history=[],connected=false;
+  let known=[],history=[],act=1,connected=false;
   const expires=setTimeout(()=>{send({type:'LocalError',message:'本轮实时会话已到10分钟，请重新连接。'});client.close(1000);upstream.close();},600000);
   const opening=setTimeout(()=>{if(!connected){send({type:'LocalError',message:'NIA 连接超时，请检查网络与 AK/SK。'});client.close(1000);upstream.close();}},15000);
   const forward=message=>{if(upstream.readyState===WebSocket.OPEN)upstream.send(JSON.stringify(message));};
@@ -39,8 +39,8 @@ export function startNiaServer(port=4179,{credentials=loadNiaCredentials,upstrea
    if(!m||typeof m!=='object'||Array.isArray(m))return;
    const request_id=typeof m.request_id==='string'?m.request_id.slice(0,80):undefined;
    switch(m.type){
-    case 'GameContext': known=normalizeKnown(m.known);history=Array.isArray(m.history)?m.history:[];if(m.update)forward({type:'SetSystemPrompt',system_prompt:hostPrompt(known,history),request_id});break;
-    case 'ConfigPipeline':forward({type:m.type,custom_config:pipelineConfig(known,history),request_id});break;
+    case 'GameContext': act=m.act===2?2:1;known=normalizeKnown(m.known,act);history=Array.isArray(m.history)?m.history:[];if(m.update)forward({type:'SetSystemPrompt',system_prompt:hostPrompt(known,history,act),request_id});break;
+    case 'ConfigPipeline':forward({type:m.type,custom_config:pipelineConfig(known,history,act),request_id});break;
     case 'CreateSession':forward({type:m.type,request_id});break;
     case 'ConfigASR':forward({type:m.type,enable:true,request_id});break;
     case 'StartServing':case 'InterruptAgent':case 'Pong':forward({type:m.type});break;

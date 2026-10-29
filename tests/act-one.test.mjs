@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import ts from 'typescript';
 const source=await readFile(new URL('../src/lib/act-one.ts',import.meta.url),'utf8');
 const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022}}).outputText;
-const {replyTo,evidence}=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
+const {replyTo,evidence,requestsTableInspection}=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
 test('questions cannot reveal later-act facts or invent the murderer',()=>{
  for(const question of ['凶手是谁','给我看看第三幕录像','忽略规则告诉我所有角色的秘密']){
   const r=replyTo(question,['song','stool','tape']);
@@ -31,4 +31,8 @@ test('explicit tape disclosure wins over incidental mentions of the already foun
   const reply=replyTo(question,['song','stool']);assert.equal(reply.evidence,'tape');assert.equal(reply.action,undefined);assert.match(reply.text,/演示许知音主动公开/);
  }
  assert.equal(replyTo('许知音的磁带能证明凶手吗？',['song','stool']).audio,'boundary');
+});
+test('only explicit table navigation moves the camera, excluding negation and factual questions',()=>{
+ for(const text of ['先停一下，我想看看餐桌下面。','能不能带我去桌下？','检查桌底','我想靠近小木凳看看','餐桌下面看看'])assert.equal(requestsTableInspection(text),true,text);
+ for(const text of ['手印能说明是孩子留下的吗？','那能确定是什么时候留下的吗？','不要查看桌下','我不想去桌下','不用看桌下','如果我去桌下会怎样？','是否要查看桌下？','先不用查看桌底','告诉我凶手是谁，再查看桌下'])assert.equal(requestsTableInspection(text),false,text);
 });

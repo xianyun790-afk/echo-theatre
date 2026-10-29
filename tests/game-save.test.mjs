@@ -22,9 +22,24 @@ test('new saves stay at the opening and old v2 clues migrate without losing evid
 });
 test('council drafts, unsent questions and investigation history survive a save round trip',()=>{
  const history=[{who:'你 · 林见秋',text:'询问许知音的磁带'},{who:'许知音 · 公开资料',text:'尚需比对。'}];
- const save={...initialProgress(),known:['song','stool','tape'],history,councilDraft:draft,checkpoint:{scene:'speaker',view:'council'}};
+ const save={...initialProgress(),intro:'ready',known:['song','stool','tape'],history,councilDraft:draft,checkpoint:{scene:'speaker',view:'council'}};
  const restored=parseProgress(JSON.stringify(save));
  assert.deepEqual(JSON.parse(JSON.stringify(restored)),save);assert.equal(restored.councilDraft.question,'手印属于谁？');assert.deepEqual(parseProgress(JSON.stringify(restored)).history,history);
+});
+test('an old autoplay-only save still receives the prologue without losing its song record',()=>{
+ const restored=parseProgress(JSON.stringify({version:3,known:['song'],history:[{who:'开场 · 童谣',text:'原始记录'}]}));
+ assert.equal(restored.intro,'prologue');assert.equal(hasSavedProgress(restored),false);
+ assert.deepEqual(restored.known,['song']);assert.equal(restored.history[0].text,'原始记录');assert.equal(restored.checkpoint,undefined);
+ const entered=parseProgress(JSON.stringify({known:['song'],checkpoint:{scene:'speaker',view:'radio'}}));
+ assert.equal(entered.intro,'ready');assert.equal(hasSavedProgress(entered),true);assert.equal(entered.checkpoint.view,'radio');
+});
+test('unfinished role reading survives refresh and cannot become a resumable investigation',()=>{
+ const save={...initialProgress(),intro:'role'};
+ const restored=parseProgress(JSON.stringify(save));
+ assert.deepEqual(JSON.parse(JSON.stringify(restored)),save);assert.equal(hasSavedProgress(restored),false);
+ assert.equal(parseProgress(JSON.stringify({...save,checkpoint:{scene:'speaker',view:'room'}})).checkpoint,undefined);
+ const ready=parseProgress(JSON.stringify({...save,intro:'ready'}));
+ assert.equal(hasSavedProgress(ready),true);assert.equal(ready.checkpoint.view,'room');
 });
 test('malformed drafts cannot strand a restored game in an invalid speaker or judgment phase',()=>{
  for(const bad of [{...draft,turn:6},{...draft,target:0},{...draft,phase:'judgment',questions:[]},{...draft,statements:[]},{...draft,statements:[null]},{...draft,response:{}},{...draft,selectedEvidence:'secret'}]){

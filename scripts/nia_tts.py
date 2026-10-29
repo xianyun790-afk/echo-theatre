@@ -57,8 +57,9 @@ def status():
                 count += (CACHE / entry['file']).is_file()
             except (ValueError, TTSError):
                 pass
-    return {'configured': count == 58, 'provider': 'NIA', 'model': CAST['model'],
+    total = sum(1 + (len(QUESTION_ROLES) if clip_id.startswith('council-question-') else 0) for clip_id in SCRIPTS)
+    return {'configured': count == total, 'provider': 'NIA', 'model': CAST['model'],
             'voice_name': CAST['voices']['narrator_host']['name'], 'dialogue': 'scripted',
             'roles_share_voice': False, 'generation_mode': 'cache-only',
-            'cached_clips': count, 'total_clips': 58,
+            'cached_clips': count, 'total_clips': total,
             'voices': {role: {'name': v['name'], 'voice_id': v['voice_id']} for role, v in CAST['voices'].items()}}

@@ -1,6 +1,6 @@
 export type PlaybackOptions={retryOnGesture?:boolean;onStart?:()=>void;onEnded?:()=>void;kind?:'voice'|'music';leadInMs?:number};
 // Invalidate browser-cached renders when the narration profile changes.
-const VOICE_REVISION='nia-cast-v1-20261021';
+const VOICE_REVISION='nia-cast-v3-20261028';
 function fadeVolume(audio:HTMLAudioElement,target:number,duration:number,done?:()=>void){
  const from=audio.volume,began=Date.now();
  const timer=setInterval(()=>{

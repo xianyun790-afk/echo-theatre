@@ -3,15 +3,19 @@ export type SpeechState='idle'|'starting'|'listening'|'transcribing';
 type Callbacks={onState:(state:SpeechState)=>void;onLevel:(level:number)=>void;onFinal:(text:string)=>void;onError:(message:string)=>void};
 export class LocalSpeechSession {
  private generation=0;private active=false;private controller:AbortController|null=null;
+ private finishCapture:(()=>void)|null=null;
  private stream:MediaStream|null=null;private context:AudioContext|null=null;private node:AudioWorkletNode|null=null;private timer:ReturnType<typeof setInterval>|null=null;
  constructor(private callbacks:Callbacks){}
  private releaseMicrophone(){
+  this.finishCapture=null;
   if(this.timer)clearInterval(this.timer);this.timer=null;
   if(this.node){this.node.port.onmessage=null;this.node.disconnect();this.node=null;}
   this.stream?.getTracks().forEach(track=>track.stop());this.stream=null;
   if(this.context){void this.context.close().catch(()=>{});this.context=null;}this.callbacks.onLevel(0);
  }
  stop(){this.generation++;this.active=false;this.controller?.abort();this.controller=null;this.releaseMicrophone();this.callbacks.onState('idle');}
+ /** Complete the current recording; stop() continues to cancel without submitting. */
+ finish(){this.finishCapture?.();}
  async start(){
   if(this.active)return;this.active=true;const token=++this.generation,controller=new AbortController();this.controller=controller;
   const current=()=>this.active&&token===this.generation;
@@ -40,6 +44,7 @@ export class LocalSpeechSession {
     this.stop();this.callbacks.onFinal(text);
    };
    const fail=(error:unknown)=>{if(!current())return;this.stop();this.callbacks.onError(error instanceof Error?error.message:'语音识别失败，请重试。');};
+   this.finishCapture=()=>{void finish().catch(fail);};
    node.port.onmessage=event=>{
     if(!current()||ending)return;const chunk=event.data as Float32Array;chunks.push(chunk);total+=chunk.length;
     let energy=0;for(const sample of chunk)energy+=sample*sample;const rms=Math.sqrt(energy/chunk.length);this.callbacks.onLevel(Math.min(1,rms*12));

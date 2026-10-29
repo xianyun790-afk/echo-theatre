@@ -7,7 +7,7 @@ test('cast has seven distinct voices and live host shares the narrator identity'
  assert.equal(new Set(Object.values(cast.voices).map(v=>v.voice_id)).size,7);
  assert.equal(pipelineConfig([]).voice_type,cast.voices.narrator_host.voice_id);
  assert.equal(pipelineConfig([]).language,'ZH_CN');assert.equal(cast.speech_rate,1);
- const clips=productionClips();assert.equal(clips.length,58);
+ const clips=productionClips();assert.equal(clips.filter(c=>!c.id.startsWith('a2-')).length,58);assert.equal(clips.filter(c=>c.id.startsWith('a2-')).length,24);
  for(const role of ['xu','shen','zhou','cheng','tang'])for(const suffix of ['print','tape','numbers','open'])assert.ok(clips.some(c=>c.id==='council-question-'+suffix&&c.role===role));
  const q=clips.find(c=>c.id==='council-question-print');
  assert.notEqual(cacheKey(q),cacheKey({...q,role:'xu'}));assert.notEqual(cacheKey(q),cacheKey({...q,text:q.text+'改'}));

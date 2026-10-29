@@ -13,6 +13,12 @@ const privateRequest=/忽略|系统提示|所有.*秘密|其他.*剧本|凶手|�
 export function requestsTapeDisclosure(question:string){
  return !privateRequest.test(question)&&/许知音|磁带|音轨/.test(question);
 }
+/** Execute clear navigation requests locally; questions about a clue do not move the camera. */
+export function requestsTableInspection(question:string){
+ if(privateRequest.test(question)||/不要|不用|别|不想|不去|无需|不需要|不愿|能不(?!能)|是否|有没有必要|如果|假如|先不|暂时不/.test(question))return false;
+ const target='(?:(?:餐桌|桌子?|饭桌)(?:的)?(?:下(?:面|边|方)?|底(?:下|部)?)|小木凳|木凳|凳子)';
+ return new RegExp('(?:看看|看一下|查看|看|检查|调查|搜查|去|走|切换|靠近)[^，。！？,!?]{0,12}'+target+'|'+target+'[^，。！？,!?]{0,6}(?:看看|看一下|检查|调查)').test(question);
+}
 /** First-act deterministic script. No model is called and later-act facts are excluded. */
 export function replyTo(question:string,known:EvidenceId[]):Reply {
  if(privateRequest.test(question))return {text:'现在仍在第一幕。我们只讨论已经公开的信息，其他角色的私人记忆需要由本人决定是否讲述。',audio:'boundary'};

@@ -2,7 +2,7 @@
   "model": "sensenova-tts-2.0",
   "provider": "SenseAudio",
   "cache_only": true,
-  "notes": "系统音色合成返回403；统一使用该账户已验证可用的自有“播音”音色。参数变化不代表不同音色。",
+  "notes": "系统音色合成返回403；统一使用该账户已验证可用的自有“播音”音色。参数变化不代表不同音色。；a2-前缀为第二幕固定演绎台词，按NIA角色映射预生成。；a2-前缀为第二幕固定演绎台词，按NIA角色映射预生成。；a2-前缀为第二幕固定演绎台词，按NIA角色映射预生成。",
   "voices": {
     "narrator_host": {
       "role": "旁白／主持人",
@@ -244,6 +244,126 @@
       "role": "narrator_host",
       "text": "我目前能提供的，是刚才已经公开的观察。我们可以查童谣的来源、手印，或比对磁带与广播；这些证据都还不能确定幕后的人。",
       "id": "Q04"
+    },
+    "a2-opening-1": {
+      "role": "narrator_host",
+      "text": "九点零七分，灯灭了。二楼传来沉重的撞击。你们跟着手机的光上楼，值班室的门紧闭。顾怀山没有回应。",
+      "id": "A2-OPENING-1"
+    },
+    "a2-opening-2": {
+      "role": "narrator_host",
+      "text": "程野撞开门。顾怀山倒在广播台旁，耳机挂在颈侧，茶杯碎了，手下压着一本旧名册。林见秋检查后请人呼叫急救和警方。",
+      "id": "A2-OPENING-2"
+    },
+    "a2-blackout": {
+      "role": "narrator_host",
+      "text": "21点05分，六个人都已回到大厅。两分钟后，全楼停电，二楼传来撞击。没有人看见声响是怎样产生的。",
+      "id": "A2-BLACKOUT"
+    },
+    "a2-register": {
+      "role": "narrator_host",
+      "text": "名册被茶水浸湿。一行字仍可辨认：当晚实际在院人数，七。值班室的门已被撞开。",
+      "id": "A2-REGISTER"
+    },
+    "a2-boundary": {
+      "role": "narrator_host",
+      "text": "现有材料不足以判断死亡原因、准确死亡时间或门锁机制。门紧闭不等于从里面反锁；停电后的撞击也不能单独证明死亡时间。当前不能指认凶手。",
+      "id": "A2-BOUNDARY"
+    },
+    "a2-private-boundary": {
+      "role": "narrator_host",
+      "text": "现在只讨论第二幕已经公开的观察。其他人的私人剧本与后续幕尚未公开；请先核对眼前的名册、时间线和录音。",
+      "id": "A2-PRIVATE-BOUNDARY"
+    },
+    "a2-hint": {
+      "role": "narrator_host",
+      "text": "先记录停电与名册，再依次听取六人的活动，最后收听旧录音。个人回忆、镜头和现场观察要分开记录；当前材料不足以结案。",
+      "id": "A2-HINT"
+    },
+    "a2-timeline-hint": {
+      "role": "narrator_host",
+      "text": "21点05分六人已经回到大厅，21点07分停电并传来撞击。个人活动是各自陈述，不是完整的不在场证明。请逐一听取，再把交叉观察对齐。",
+      "id": "A2-TIMELINE-HINT"
+    },
+    "a2-recording-limit": {
+      "role": "narrator_host",
+      "text": "录音里出现不能数七和少报了一个人。录音没有确认人物身份，也没有给出录制时间，不能直接当作今晚的现场对话。",
+      "id": "A2-RECORDING-LIMIT"
+    },
+    "a2-statements": {
+      "role": "narrator_host",
+      "text": "先从林见秋开始，说说20点10分以后你去了哪里。其他人依次陈述。正文会留在这里，按下一位再继续。",
+      "id": "A2-STATEMENTS"
+    },
+    "a2-liang": {
+      "role": "liang",
+      "text": "山路有一处塌方，警方正在绕行。先到餐厅等。",
+      "id": "A2-LIANG"
+    },
+    "a2-door": {
+      "role": "narrator_host",
+      "text": "走廊尽头，七号房的门不知何时开了一条缝。没有人看见是谁打开的。你已经整理出一条查证方向。本次试玩到这里，先保存调查记录。",
+      "id": "A2-DOOR"
+    },
+    "a2-wet-shoes": {
+      "role": "narrator_host",
+      "text": "20点10分，顾怀山上楼时，我看见鞋底留下水痕。停车处到大厅有雨棚。",
+      "id": "A2-WET-SHOES"
+    },
+    "a2-oil": {
+      "role": "narrator_host",
+      "text": "七号房门轴上的新油痕，是程野公开的观察。有人维护过，不等于现在知道是谁，也不等于知道维护的时间。",
+      "id": "A2-OIL"
+    },
+    "a2-statement-lin": {
+      "role": "narrator_host",
+      "text": "20:10到20:30，我在一楼大厅。20:30到20:45，我在二楼西侧的房间和走廊，20:35左右与唐棠说过话。20:45以后，我回到大厅。",
+      "id": "A2-STATEMENT-LIN"
+    },
+    "a2-statement-shen": {
+      "role": "shen",
+      "text": "20:10到20:35，我在一楼餐厅。之后去了二楼东侧旧阅览区，21点回大厅。20:50左右，我听见顾怀山说“东西还给我”，没看见他说给谁听，也不能确认对方回答过。",
+      "id": "A2-STATEMENT-SHEN"
+    },
+    "a2-statement-zhou": {
+      "role": "zhou",
+      "text": "20:10到20:40，我在大厅拍摄，之后到一楼楼梯口拍摄，20:50回大厅整理包。20:46，镜头拍到顾怀山独自从二楼走廊进入值班室。只有这个短镜头，没有连续拍到后续。",
+      "id": "A2-STATEMENT-ZHOU"
+    },
+    "a2-statement-xu": {
+      "role": "xu",
+      "text": "20:10到20:25，我在餐厅，之后在一楼靠窗休息区戴耳机听带回的磁带，20:55回到大厅。比对后，我能听出收到的磁带和今晚广播不是同一份音轨，但还不能找到制作者。修复文件是我自己准备的。",
+      "id": "A2-STATEMENT-XU"
+    },
+    "a2-statement-cheng": {
+      "role": "cheng",
+      "text": "20:10到20:30，我在一楼检查配电箱，之后去室外有顶棚的连廊检查渗水，20:50回大厅。停电后我撞开值班室门，随后看到七号房门轴有新油痕。东侧楼梯已经封了。",
+      "id": "A2-STATEMENT-CHENG"
+    },
+    "a2-statement-tang": {
+      "role": "tang",
+      "text": "20:10到20:30，我在大厅画画。之后在二楼七号房门外，20:35左右和林见秋说过话，20:45回大厅。我们听见房内轻响，但没有看见里面有什么。我说“储物间不会每天晚上哭”，那是浮现的感觉，不是今晚的观察。",
+      "id": "A2-STATEMENT-TANG"
+    },
+    "a2-recording-a": {
+      "role": "tang",
+      "text": "一，二，三，四，五，六。",
+      "id": "A2-RECORDING-A"
+    },
+    "a2-recording-b": {
+      "role": "xu",
+      "text": "不能数七。",
+      "id": "A2-RECORDING-B"
+    },
+    "a2-recording-c": {
+      "role": "tang",
+      "text": "为什么？",
+      "id": "A2-RECORDING-C"
+    },
+    "a2-recording-d": {
+      "role": "xu",
+      "text": "数到七，她就知道我们少报了一个人。",
+      "id": "A2-RECORDING-D"
     }
   }
 }
