@@ -9,7 +9,7 @@
 - 部署步骤与验收：[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)；Nginx 示例：[config/nginx.example.conf](config/nginx.example.conf)。
 - 完整部署资源：[v0.2.8 Release](https://github.com/xianyun790-afk/echo-theatre/releases/tag/v0.2.8) 的 ZIP 附件，包含中文识别模型、82条配音和 manifest。克隆源码后，也需从该包复制 `echo-theatre/.local-asr/` 到工程根目录；保留隐藏文件。
 - 密钥由部署者在服务器 `.env.local` 配置，示例见 [.env.example](.env.example)。远程麦克风需要 HTTPS，还需按部署说明设置正式 Origin 并运行两个后端服务。
-- 仓库为私有；部署者须获仓库访问权限，或由项目所有者转交完整部署 ZIP。
+- 仓库已公开；可直接分享仓库链接查看代码，或通过上方 Release 下载完整部署 ZIP。服务密钥仍由部署者单独配置。
 
 ## 启动
 
